@@ -1,1 +1,166 @@
 
+function classProd() {
+    let cod = parseInt(prompt("Digite o código do produto:"));
+    let cls;
+
+    switch (cod) {
+        case 1:
+            cls = "Alimento não-perecível";
+            break;
+        case 2:
+        case 3:
+        case 4:
+            cls = "Alimento perecível";
+            break;
+        case 5:
+        case 6:
+            cls = "Vestuário";
+            break;
+        case 7:
+            cls = "Higiene Pessoal";
+            break;
+        default:
+            if (cod >= 8 && cod <= 15) {
+                cls = "Limpeza e Utensílios Domésticos";
+            } else {
+                alert("Código inválido");
+                return;
+            }
+            break;
+    }
+
+    console.log(`Classificação: ${cls}`);
+}
+
+classProd();
+/* TII05Manhã */
+function calc() {
+    let n1 = parseFloat(prompt("Digite o primeiro número:"));
+    let n2 = parseFloat(prompt("Digite o segundo número:"));
+    let car = prompt("Digite o caractere da operação (+, -, *, /):");
+    let res;
+
+    switch (car) {
+        case '+':
+            res = n1 + n2;
+            break;
+        case '-':
+            res = n1 - n2;
+            break;
+        case '*':
+            res = n1 * n2;
+            break;
+        case '/':
+            if (n2 !== 0) {
+                res = n1 / n2;
+            } else {
+                alert("Erro: Divisão por zero");
+                return;
+            }
+            break;
+        default:
+            alert("Operação inválida");
+            return;
+    }
+
+    console.log(`Resultado: ${res}`);
+}
+
+calc();
+/* TII05Manhã */
+function menuOp() {
+    let n1 = parseFloat(prompt("Digite o primeiro número:"));
+    let n2 = parseFloat(prompt("Digite o segundo número:"));
+    let esc = parseInt(prompt("Escolha a operação:\n1 - Média\n2 - Diferença\n3 - Produto\n4 - Divisão"));
+    let res;
+
+    switch (esc) {
+        case 1:
+            res = (n1 + n2) / 2;
+            console.log(`Média: ${res}`);
+            break;
+        case 2:
+            res = Math.abs(n1 - n2);
+            console.log(`Diferença: ${res}`);
+            break;
+        case 3:
+            res = n1 * n2;
+            console.log(`Produto: ${res}`);
+            break;
+        case 4:
+            if (n2 !== 0) {
+                res = n1 / n2;
+                console.log(`Divisão do primeiro pelo segundo: ${res}`);
+            } else {
+                alert("Erro: O segundo número não pode ser zero.");
+            }
+            break;
+        default:
+            alert("Erro: Opção inválida. Execução terminada.");
+            return;
+    }
+}
+
+menuOp();
+/* TII05Manhã */
+function totPed() {
+    let cod = parseInt(prompt("Digite o código do item (100 a 105):"));
+    let qtd = parseInt(prompt("Digite a quantidade adquirida:"));
+    let prc = 0;
+
+    switch (cod) {
+        case 100: prc = 1.70; break;
+        case 101: prc = 2.30; break;
+        case 102: prc = 2.60; break;
+        case 103: prc = 2.40; break;
+        case 104: prc = 2.50; break;
+        case 105: prc = 1.00; break;
+        default:
+            alert("Código de produto inválido.");
+            return;
+    }
+
+    let vF = prc * qtd;
+    console.log(`R$ ${vF.toFixed(2)}`);
+}
+
+totPed();
+/* TII05Manhã */
+function descEst() {
+    let m = prompt("Digite o mês do ano:");
+    if (!m) return;
+    
+    let mF = m.toLowerCase().trim();
+    let est;
+
+    switch (mF) {
+        case 'dezembro':
+        case 'janeiro':
+        case 'fevereiro':
+            est = "Verão";
+            break;
+        case 'março':
+        case 'abril':
+        case 'maio':
+            est = "Outono";
+            break;
+        case 'junho':
+        case 'julho':
+        case 'agosto':
+            est = "Inverno";
+            break;
+        case 'setembro':
+        case 'outubro':
+        case 'novembro':
+            est = "Primavera";
+            break;
+        default:
+            alert("Mês inválido");
+            return;
+    }
+
+    console.log(`${m} = ${est}`);
+}
+
+descEst();
+/* TII05Manhã */
