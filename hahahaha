@@ -5,34 +5,17 @@ let cod1 = prompt("Ex 1: Digite o código do produto (1 a 15):");
 let cls;
 
 switch (cod1) {
-    case "1":
-        cls = "Alimento não-perecível";
-        break;
-    case "2":
-    case "3":
-    case "4":
-        cls = "Alimento perecível";
-        break;
-    case "5":
-    case "6":
-        cls = "Vestuário";
-        break;
-    case "7":
-        cls = "Higiene Pessoal";
-        break;
+    case "1": cls = "Alimento não-perecível"; break;
+    case "2": case "3": case "4": cls = "Alimento perecível"; break;
+    case "5": case "6": cls = "Vestuário"; break;
+    case "7": cls = "Higiene Pessoal"; break;
     default:
-        // Validação de intervalo simples usando o valor digitado
-        if (cod1 >= 8 && cod1 <= 15) {
-            cls = "Limpeza e Utensílios Domésticos";
-        } else {
-            alert("Código inválido");
-        }
+        if (cod1 >= 8 && cod1 <= 15) { cls = "Limpeza e Utensílios Domésticos"; } 
+        else { alert("Código inválido"); }
         break;
 }
 
-if (cls) {
-    alert(`Classificação: ${cls}`);
-}
+console.log("Classificação do produto:", cls);
 
 
 // ==========================================
@@ -44,30 +27,19 @@ let car = prompt("Ex 2: Digite a operação (+, -, *, /):");
 let res2;
 
 switch (car) {
-    case '+': 
-        res2 = n1 + n2; // Atenção: o '+' junta textos. Use os outros se quiser testar pura matemática.
-        break;
-    case '-': 
-        res2 = n1 - n2; 
-        break;
-    case '*': 
-        res2 = n1 * n2; 
-        break;
+    case '+': res2 = n1 + n2; break; // Junta os textos
+    case '-': res2 = n1 - n2; break;
+    case '*': res2 = n1 * n2; break;
     case '/':
-        if (n2 != 0) {
-            res2 = n1 / n2;
-        } else {
-            alert("Erro: Divisão por zero");
-        }
+        if (n2 != 0) { res2 = n1 / n2; } 
+        else { alert("Erro: Divisão por zero"); }
         break;
     default:
         alert("Operação inválida");
         break;
 }
 
-if (res2 !== undefined) {
-    alert(`Resultado da Calculadora: ${res2}`);
-}
+console.log("Resultado da Calculadora:", res2);
 
 
 // ==========================================
@@ -76,28 +48,22 @@ if (res2 !== undefined) {
 let num1 = prompt("Ex 3: Digite o primeiro número:");
 let num2 = prompt("Ex 3: Digite o segundo número:");
 let esc = prompt("Ex 3: Escolha a operação:\n1 - Média\n2 - Diferença\n3 - Produto\n4 - Divisão");
+let res3;
 
 switch (esc) {
-    case "1":
-        alert(`Média: ${(num1 * 1 + num2 * 1) / 2}`);
-        break;
-    case "2":
-        alert(`Diferença: ${Math.abs(num1 - num2)}`);
-        break;
-    case "3":
-        alert(`Produto: ${num1 * num2}`);
-        break;
+    case "1": res3 = (num1 * 1 + num2 * 1) / 2; break;
+    case "2": res3 = Math.abs(num1 - num2); break;
+    case "3": res3 = num1 * num2; break;
     case "4":
-        if (num2 != 0) {
-            alert(`Divisão: ${num1 / num2}`);
-        } else {
-            alert("Erro: O segundo número não pode ser zero.");
-        }
+        if (num2 != 0) { res3 = num1 / num2; } 
+        else { alert("Erro: O segundo número não pode ser zero."); }
         break;
     default:
         alert("Erro: Opção inválida. Execução terminada.");
         break;
 }
+
+console.log("Resultado do menu:", res3);
 
 
 // ==========================================
@@ -105,63 +71,40 @@ switch (esc) {
 // ==========================================
 let cod4 = prompt("Ex 4: Digite o código do item (100 a 105):");
 let qtd = prompt("Ex 4: Digite a quantidade adquirida:");
-let prc = 0;
+let tot4;
 
 switch (cod4) {
-    case "100": prc = 1.70; break;
-    case "101": prc = 2.30; break;
-    case "102": prc = 2.60; break;
-    case "103": prc = 2.40; break;
-    case "104": prc = 2.50; break;
-    case "105": prc = 1.00; break;
+    case "100": tot4 = 1.70 * qtd; break;
+    case "101": tot4 = 2.30 * qtd; break;
+    case "102": tot4 = 2.60 * qtd; break;
+    case "103": tot4 = 2.40 * qtd; break;
+    case "104": tot4 = 2.50 * qtd; break;
+    case "105": tot4 = 1.00 * qtd; break;
     default:
         alert("Código de produto inválido.");
         break;
 }
 
-if (prc > 0) {
-    alert(`Total do Cardápio: R$ ${(prc * qtd)}`);
-}
+console.log("Total do Cardápio: R$", tot4);
 
 
 // ==========================================
 // EXERCÍCIO 5: Estações do Ano
 // ==========================================
 let m = prompt("Ex 5: Digite o mês do ano:");
+let mF = m ? m.toLowerCase().trim() : "";
+let est;
 
-if (m) {
-    let mF = m.toLowerCase().trim();
-    let est;
-
-    switch (mF) {
-        case 'dezembro':
-        case 'janeiro':
-        case 'fevereiro':
-            est = "Verão";
-            break;
-        case 'março':
-        case 'abril':
-        case 'maio':
-            est = "Outono";
-            break;
-        case 'junho':
-        case 'julho':
-        case 'agosto':
-            est = "Inverno";
-            break;
-        case 'setembro':
-        case 'outubro':
-        case 'novembro':
-            est = "Primavera";
-            break;
-        default:
-            alert("Mês inválido");
-            break;
-    }
-
-    if (est) {
-        alert(`Estação do ano: ${m} = ${est}`);
-    }
+switch (mF) {
+    case 'dezembro': case 'janeiro': case 'fevereiro': est = "Verão"; break;
+    case 'março': case 'abril': case 'maio': est = "Outono"; break;
+    case 'junho': case 'julho': case 'agosto': est = "Inverno"; break;
+    case 'setembro': case 'outubro': case 'novembro': est = "Primavera"; break;
+    default:
+        alert("Mês inválido");
+        break;
 }
+
+console.log("Estação do ano:", est);
 
 /* TII05Manhã */
