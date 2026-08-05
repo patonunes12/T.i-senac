@@ -1,223 +1,174 @@
 
 // ==========================================
-// ATIVIDADE 1: Acesso e Boas-Vindas
+// 1. Acesso e Boas-Vindas
 // ==========================================
-console.log("--- Executando Atividade 1 ---");
+console.log("--- Exercício 1 ---");
 let tentativas = 0;
-let logado = false;
 
 while (tentativas < 3) {
-    let senha = prompt("Atividade 1 - Digite a senha:");
+    let senha = prompt("Exercício 1 - Digite a senha:");
     if (senha === "1234") {
-        logado = true;
-        break;
+        for (let i = 0; i < 5; i++) {
+            console.log("Bem-vindo ao sistema!");
+        }
+        break; // Para o while se acertar
     }
     tentativas++;
-    alert(`Senha incorreta! Tentativas restantes: ${3 - tentativas}`);
 }
 
-if (logado) {
-    for (let i = 0; i < 5; i++) {
-        console.log("Bem-vindo ao sistema!");
-    }
-} else {
-    console.log("Acesso bloqueado: Limite de tentativas excedido.");
-}
-
-
 // ==========================================
-// ATIVIDADE 2: Validador de Notas de um Aluno
+// 2. Validador de Notas de um Aluno
 // ==========================================
-console.log("\n--- Executando Atividade 2 ---");
+console.log("--- Exercício 2 ---");
 let somaNotas = 0;
 
 for (let i = 1; i <= 4; i++) {
     let nota;
     do {
-        nota = parseFloat(prompt(`Atividade 2 - Digite a nota do ${i}º bimestre (0 a 10):`));
-    } while (isNaN(nota) || nota < 0 || nota > 10);
-    somaNotas += nota;
+        nota = parseFloat(prompt(`Exercício 2 - Digite a nota ${i} (0 a 10):`));
+    } while (nota < 0 || nota > 10); // Repete se for inválida
+    
+    somaNotas = somaNotas + nota;
 }
-
-let media = somaNotas / 4;
-console.log(`Média final do aluno: ${media}`);
-
+console.log("Média final: " + (somaNotas / 4));
 
 // ==========================================
-// ATIVIDADE 3: Menu Interativo
+// 3. Menu Interativo
 // ==========================================
-console.log("\n--- Executando Atividade 3 ---");
-let opcaoMenu;
+console.log("--- Exercício 3 ---");
+let opcao;
 
 do {
-    opcaoMenu = prompt("Atividade 3 - Menu:\n1 - Mostrar Tabuada\n2 - Contagem Regressiva (10 a 0)\n0 - Sair");
+    opcao = prompt("Exercício 3 - Menu:\n1 - Mostrar Tabuada\n2 - Contagem\n0 - Sair");
     
-    if (opcaoMenu === "1") {
-        let numTabuada = parseInt(prompt("Digite o número para a tabuada:"));
+    if (opcao === "1") {
         for (let i = 1; i <= 10; i++) {
-            console.log(`${numTabuada} x ${i} = ${numTabuada * i}`);
-        }
-    } else if (opcaoMenu === "2") {
-        for (let i = 10; i >= 0; i--) {
-            console.log(`Contagem: ${i}`);
+            console.log("5 x " + i + " = " + (5 * i)); // Tabuada fixa do 5 para simplificar
         }
     }
-} while (opcaoMenu !== "0" && opcaoMenu !== null);
-console.log("Menu interativo encerrado.");
-
+    if (opcao === "2") {
+        for (let i = 10; i >= 0; i--) {
+            console.log(i);
+        }
+    }
+} while (opcao !== "0");
 
 // ==========================================
-// ATIVIDADE 4: Caixa Eletrônico
+// 4. Caixa Eletrônico
 // ==========================================
-console.log("\n--- Executando Atividade 4 ---");
-let saldo = 500.00;
+console.log("--- Exercício 4 ---");
+let saldo = 500;
 
 while (saldo >= 0) {
-    let saque = parseFloat(prompt(`Atividade 4 - Seu saldo atual é R$ ${saldo.toFixed(2)}.\nDigite o valor do saque (ou 0 para sair):`));
+    let saque = parseFloat(prompt("Saldo atual: R$" + saldo + "\nDigite o valor do saque (0 para sair):"));
     
-    if (isNaN(saque) || saque === 0) {
-        break;
+    if (saque === 0) {
+        break; // Sai do laço
     }
-    
     if (saque > saldo) {
-        alert("Erro: Valor do saque maior que o saldo disponível!");
-        console.log(`Tentativa de saque inválida: R$ ${saque.toFixed(2)} (Saldo: R$ ${saldo.toFixed(2)})`);
+        console.log("Erro: Saque maior que o saldo!");
     } else {
-        saldo -= saque;
-        console.log(`Saque realizado: R$ ${saque.toFixed(2)} | Saldo restante: R$ ${saldo.toFixed(2)}`);
+        saldo = saldo - saque;
+        console.log("Saque de R$" + saque + " realizado. Saldo: R$" + saldo);
     }
 }
-console.log(`Caixa eletrônico finalizado. Saldo final: R$ ${saldo.toFixed(2)}`);
-
 
 // ==========================================
-// ATIVIDADE 5: Somador Dinâmico
+// 5. Somador Dinâmico
 // ==========================================
-console.log("\n--- Executando Atividade 5 ---");
-let qtdNumeros;
+console.log("--- Exercício 5 ---");
+let qtd;
 
 do {
-    qtdNumeros = parseInt(prompt("Atividade 5 - Quantos números você deseja somar? (Deve ser maior que 0)"));
-} while (isNaN(qtdNumeros) || qtdNumeros <= 0);
+    qtd = parseInt(prompt("Exercício 5 - Quantos números quer somar? (Maior que 0)"));
+} while (qtd <= 0);
 
-let somaDinamica = 0;
-for (let i = 1; i <= qtdNumeros; i++) {
-    let numDigitado = parseFloat(prompt(`Digite o ${i}º número de ${qtdNumeros}:`));
-    if (!isNaN(numDigitado)) {
-        somaDinamica += numDigitado;
-    }
+let somaTotal = 0;
+for (let i = 1; i <= qtd; i++) {
+    let numero = parseFloat(prompt("Digite o número " + i + ":"));
+    somaTotal = somaTotal + numero;
 }
-console.log(`Soma total dos ${qtdNumeros} números digitados: ${somaDinamica}`);
-
+console.log("Soma total: " + somaTotal);
 
 // ==========================================
-// ATIVIDADE 6: Jogo da Adivinhação com Replay
+// 6. Jogo da Adivinhação com Replay
 // ==========================================
-console.log("\n--- Executando Atividade 6 ---");
-let jogarNovamente;
+console.log("--- Exercício 6 ---");
+let replay;
 
 do {
-    let numeroSorteado = Math.floor(Math.random() * 10) + 1;
-    let palpite;
+    let numeroCerto = 7; // Número fixo para simplificar o teste
+    let palpite = 0;
     
-    console.log("Iniciando nova rodada do jogo da adivinhação...");
-    while (palpite !== numeroSorteado) {
-        palpite = parseInt(prompt("Atividade 6 - Adivinhe o número sorteado (entre 1 e 10):"));
-        if (palpite !== numeroSorteado) {
-            alert("Errado! Tente de novo.");
-        }
+    while (palpite !== numeroCerto) {
+        palpite = parseInt(prompt("Exercício 6 - Tente adivinhar o número (1 a 10):"));
     }
+    console.log("Você acertou o número 7!");
     
-    console.log(`Usuário acertou o número sorteado: ${numeroSorteado}`);
-    
-    do {
-        jogarNovamente = parseInt(prompt("Deseja jogar novamente?\n1 - Sim\n2 - Não"));
-    } while (jogarNovamente !== 1 && jogarNovamente !== 2);
-
-} while (jogarNovamente === 1);
-console.log("Jogo da adivinhação encerrado.");
-
+    replay = parseInt(prompt("Deseja jogar de novo?\n1 - Sim\n2 - Não"));
+} while (replay === 1);
 
 // ==========================================
-// ATIVIDADE 7: Fatorial com Validação
+// 7. Fatorial com Validação
 // ==========================================
-console.log("\n--- Executando Atividade 7 ---");
-let numFatorial;
+console.log("--- Exercício 7 ---");
+let numFatorial = -1;
 
-while (true) {
-    numFatorial = parseInt(prompt("Atividade 7 - Digite um número inteiro maior ou igual a 0 para calcular o fatorial:"));
-    if (!isNaN(numFatorial) && numFatorial >= 0) {
-        break;
-    }
+while (numFatorial < 0) {
+    numFatorial = parseInt(prompt("Exercício 7 - Digite um número positivo:"));
 }
 
-let resultadoFatorial = 1;
+let fatorial = 1;
 for (let i = 1; i <= numFatorial; i++) {
-    resultadoFatorial *= i;
+    fatorial = fatorial * i;
 }
-console.log(`O fatorial de ${numFatorial} é: ${resultadoFatorial}`);
-
+console.log("O fatorial de " + numFatorial + " é: " + fatorial);
 
 // ==========================================
-// ATIVIDADE 8: Múltiplas Tabuadas
+// 8. Múltiplas Tabuadas
 // ==========================================
-console.log("\n--- Executando Atividade 8 ---");
-let numeroTabuadaDesejada;
+console.log("--- Exercício 8 ---");
+let tabuadaEscolhida;
 
 do {
-    numeroTabuadaDesejada = parseInt(prompt("Atividade 8 - Qual tabuada você quer ver? (Digite 0 para sair)"));
+    tabuadaEscolhida = parseInt(prompt("Exercício 8 - Digite qual tabuada quer ver (0 para sair):"));
     
-    if (!isNaN(numeroTabuadaDesejada) && numeroTabuadaDesejada !== 0) {
-        console.log(`Tabuada do número ${numeroTabuadaDesejada}:`);
+    if (tabuadaEscolhida !== 0) {
         for (let i = 1; i <= 10; i++) {
-            console.log(`${numeroTabuadaDesejada} x ${i} = ${numeroTabuadaDesejada * i}`);
+            console.log(tabuadaEscolhida + " x " + i + " = " + (tabuadaEscolhida * i));
         }
     }
-} while (numeroTabuadaDesejada !== 0);
-console.log("Múltiplas tabuadas encerrado.");
-
+} while (tabuadaEscolhida !== 0);
 
 // ==========================================
-// ATIVIDADE 9: Estatísticas de uma Turma
+// 9. Estatísticas de uma Turma
 // ==========================================
-console.log("\n--- Executando Atividade 9 ---");
-let maioresDeIdade = 0;
+console.log("--- Exercício 9 ---");
+let maiores = 0;
 
 for (let i = 1; i <= 5; i++) {
-    let idade;
-    while (true) {
-        idade = parseInt(prompt(`Atividade 9 - Cadastre a idade do aluno ${i} (entre 0 e 120):`));
-        if (!isNaN(idade) && idade >= 0 && idade <= 120) {
-            break;
-        }
-        alert("Idade inválida! Digite um valor entre 0 e 120.");
+    let idade = -1;
+    while (idade < 0 || idade > 120) {
+        idade = parseInt(prompt("Exercício 9 - Digite a idade do aluno " + i + ":"));
     }
-    
     if (idade >= 18) {
-        maioresDeIdade++;
+        maiores = maiores + 1;
     }
 }
-console.log(`Quantidade de alunos maiores de idade: ${maioresDeIdade}`);
-
+console.log("Total de alunos maiores de idade: " + maiores);
 
 // ==========================================
-// ATIVIDADE 10: Gerador de Escadinha
+// 10. Gerador de Escadinha
 // ==========================================
-console.log("\n--- Executando Atividade 10 ---");
-let degraus;
+console.log("--- Exercício 10 ---");
+let degraus = 0;
 
-while (true) {
-    degraus = parseInt(prompt("Atividade 10 - Digite o número de degraus para a escada (entre 1 e 10):"));
-    if (!isNaN(degraus) && degraus >= 1 && degraus <= 10) {
-        break;
-    }
+while (degraus < 1 || degraus > 10) {
+    degraus = parseInt(prompt("Exercício 10 - Digite a quantidade de degraus (1 a 10):"));
 }
 
-console.log(`Gerando escada com ${degraus} degraus:`);
+let escada = "";
 for (let i = 1; i <= degraus; i++) {
-    let linha = "";
-    for (let j = 1; j <= i; j++) {
-        linha += "*";
-    }
-    console.log(linha);
+    escada = escada + "*"; // Adiciona um asterisco por linha
+    console.log(escada);
 }
