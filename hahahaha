@@ -1,110 +1,223 @@
-// ==========================================
-// EXERCÍCIO 1: Classificação de Produtos
-// ==========================================
-let cod1 = prompt("Ex 1: Digite o código do produto (1 a 15):");
-let cls;
 
-switch (cod1) {
-    case "1": cls = "Alimento não-perecível"; break;
-    case "2": case "3": case "4": cls = "Alimento perecível"; break;
-    case "5": case "6": cls = "Vestuário"; break;
-    case "7": cls = "Higiene Pessoal"; break;
-    default:
-        if (cod1 >= 8 && cod1 <= 15) { cls = "Limpeza e Utensílios Domésticos"; } 
-        else { alert("Código inválido"); }
+// ==========================================
+// ATIVIDADE 1: Acesso e Boas-Vindas
+// ==========================================
+console.log("--- Executando Atividade 1 ---");
+let tentativas = 0;
+let logado = false;
+
+while (tentativas < 3) {
+    let senha = prompt("Atividade 1 - Digite a senha:");
+    if (senha === "1234") {
+        logado = true;
         break;
+    }
+    tentativas++;
+    alert(`Senha incorreta! Tentativas restantes: ${3 - tentativas}`);
 }
 
-console.log("Classificação do produto:", cls);
-
-
-// ==========================================
-// EXERCÍCIO 2: Calculadora Simples
-// ==========================================
-let n1 = prompt("Ex 2: Digite o primeiro número:");
-let n2 = prompt("Ex 2: Digite o segundo número:");
-let car = prompt("Ex 2: Digite a operação (+, -, *, /):");
-let res2;
-
-switch (car) {
-    case '+': res2 = n1 + n2; break; // Junta os textos
-    case '-': res2 = n1 - n2; break;
-    case '*': res2 = n1 * n2; break;
-    case '/':
-        if (n2 != 0) { res2 = n1 / n2; } 
-        else { alert("Erro: Divisão por zero"); }
-        break;
-    default:
-        alert("Operação inválida");
-        break;
+if (logado) {
+    for (let i = 0; i < 5; i++) {
+        console.log("Bem-vindo ao sistema!");
+    }
+} else {
+    console.log("Acesso bloqueado: Limite de tentativas excedido.");
 }
 
-console.log("Resultado da Calculadora:", res2);
-
 
 // ==========================================
-// EXERCÍCIO 3: Menu de Operações
+// ATIVIDADE 2: Validador de Notas de um Aluno
 // ==========================================
-let num1 = prompt("Ex 3: Digite o primeiro número:");
-let num2 = prompt("Ex 3: Digite o segundo número:");
-let esc = prompt("Ex 3: Escolha a operação:\n1 - Média\n2 - Diferença\n3 - Produto\n4 - Divisão");
-let res3;
+console.log("\n--- Executando Atividade 2 ---");
+let somaNotas = 0;
 
-switch (esc) {
-    case "1": res3 = (num1 * 1 + num2 * 1) / 2; break;
-    case "2": res3 = Math.abs(num1 - num2); break;
-    case "3": res3 = num1 * num2; break;
-    case "4":
-        if (num2 != 0) { res3 = num1 / num2; } 
-        else { alert("Erro: O segundo número não pode ser zero."); }
-        break;
-    default:
-        alert("Erro: Opção inválida. Execução terminada.");
-        break;
+for (let i = 1; i <= 4; i++) {
+    let nota;
+    do {
+        nota = parseFloat(prompt(`Atividade 2 - Digite a nota do ${i}º bimestre (0 a 10):`));
+    } while (isNaN(nota) || nota < 0 || nota > 10);
+    somaNotas += nota;
 }
 
-console.log("Resultado do menu:", res3);
+let media = somaNotas / 4;
+console.log(`Média final do aluno: ${media}`);
 
 
 // ==========================================
-// EXERCÍCIO 4: Total de Cardápio
+// ATIVIDADE 3: Menu Interativo
 // ==========================================
-let cod4 = prompt("Ex 4: Digite o código do item (100 a 105):");
-let qtd = prompt("Ex 4: Digite a quantidade adquirida:");
-let tot4;
+console.log("\n--- Executando Atividade 3 ---");
+let opcaoMenu;
 
-switch (cod4) {
-    case "100": tot4 = 1.70 * qtd; break;
-    case "101": tot4 = 2.30 * qtd; break;
-    case "102": tot4 = 2.60 * qtd; break;
-    case "103": tot4 = 2.40 * qtd; break;
-    case "104": tot4 = 2.50 * qtd; break;
-    case "105": tot4 = 1.00 * qtd; break;
-    default:
-        alert("Código de produto inválido.");
+do {
+    opcaoMenu = prompt("Atividade 3 - Menu:\n1 - Mostrar Tabuada\n2 - Contagem Regressiva (10 a 0)\n0 - Sair");
+    
+    if (opcaoMenu === "1") {
+        let numTabuada = parseInt(prompt("Digite o número para a tabuada:"));
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${numTabuada} x ${i} = ${numTabuada * i}`);
+        }
+    } else if (opcaoMenu === "2") {
+        for (let i = 10; i >= 0; i--) {
+            console.log(`Contagem: ${i}`);
+        }
+    }
+} while (opcaoMenu !== "0" && opcaoMenu !== null);
+console.log("Menu interativo encerrado.");
+
+
+// ==========================================
+// ATIVIDADE 4: Caixa Eletrônico
+// ==========================================
+console.log("\n--- Executando Atividade 4 ---");
+let saldo = 500.00;
+
+while (saldo >= 0) {
+    let saque = parseFloat(prompt(`Atividade 4 - Seu saldo atual é R$ ${saldo.toFixed(2)}.\nDigite o valor do saque (ou 0 para sair):`));
+    
+    if (isNaN(saque) || saque === 0) {
         break;
+    }
+    
+    if (saque > saldo) {
+        alert("Erro: Valor do saque maior que o saldo disponível!");
+        console.log(`Tentativa de saque inválida: R$ ${saque.toFixed(2)} (Saldo: R$ ${saldo.toFixed(2)})`);
+    } else {
+        saldo -= saque;
+        console.log(`Saque realizado: R$ ${saque.toFixed(2)} | Saldo restante: R$ ${saldo.toFixed(2)}`);
+    }
+}
+console.log(`Caixa eletrônico finalizado. Saldo final: R$ ${saldo.toFixed(2)}`);
+
+
+// ==========================================
+// ATIVIDADE 5: Somador Dinâmico
+// ==========================================
+console.log("\n--- Executando Atividade 5 ---");
+let qtdNumeros;
+
+do {
+    qtdNumeros = parseInt(prompt("Atividade 5 - Quantos números você deseja somar? (Deve ser maior que 0)"));
+} while (isNaN(qtdNumeros) || qtdNumeros <= 0);
+
+let somaDinamica = 0;
+for (let i = 1; i <= qtdNumeros; i++) {
+    let numDigitado = parseFloat(prompt(`Digite o ${i}º número de ${qtdNumeros}:`));
+    if (!isNaN(numDigitado)) {
+        somaDinamica += numDigitado;
+    }
+}
+console.log(`Soma total dos ${qtdNumeros} números digitados: ${somaDinamica}`);
+
+
+// ==========================================
+// ATIVIDADE 6: Jogo da Adivinhação com Replay
+// ==========================================
+console.log("\n--- Executando Atividade 6 ---");
+let jogarNovamente;
+
+do {
+    let numeroSorteado = Math.floor(Math.random() * 10) + 1;
+    let palpite;
+    
+    console.log("Iniciando nova rodada do jogo da adivinhação...");
+    while (palpite !== numeroSorteado) {
+        palpite = parseInt(prompt("Atividade 6 - Adivinhe o número sorteado (entre 1 e 10):"));
+        if (palpite !== numeroSorteado) {
+            alert("Errado! Tente de novo.");
+        }
+    }
+    
+    console.log(`Usuário acertou o número sorteado: ${numeroSorteado}`);
+    
+    do {
+        jogarNovamente = parseInt(prompt("Deseja jogar novamente?\n1 - Sim\n2 - Não"));
+    } while (jogarNovamente !== 1 && jogarNovamente !== 2);
+
+} while (jogarNovamente === 1);
+console.log("Jogo da adivinhação encerrado.");
+
+
+// ==========================================
+// ATIVIDADE 7: Fatorial com Validação
+// ==========================================
+console.log("\n--- Executando Atividade 7 ---");
+let numFatorial;
+
+while (true) {
+    numFatorial = parseInt(prompt("Atividade 7 - Digite um número inteiro maior ou igual a 0 para calcular o fatorial:"));
+    if (!isNaN(numFatorial) && numFatorial >= 0) {
+        break;
+    }
 }
 
-console.log("Total do Cardápio: R$", tot4);
+let resultadoFatorial = 1;
+for (let i = 1; i <= numFatorial; i++) {
+    resultadoFatorial *= i;
+}
+console.log(`O fatorial de ${numFatorial} é: ${resultadoFatorial}`);
 
 
 // ==========================================
-// EXERCÍCIO 5: Estações do Ano
+// ATIVIDADE 8: Múltiplas Tabuadas
 // ==========================================
-let m = prompt("Ex 5: Digite o mês do ano:");
-let mF = m ? m.toLowerCase().trim() : "";
-let est;
+console.log("\n--- Executando Atividade 8 ---");
+let numeroTabuadaDesejada;
 
-switch (mF) {
-    case 'dezembro': case 'janeiro': case 'fevereiro': est = "Verão"; break;
-    case 'março': case 'abril': case 'maio': est = "Outono"; break;
-    case 'junho': case 'julho': case 'agosto': est = "Inverno"; break;
-    case 'setembro': case 'outubro': case 'novembro': est = "Primavera"; break;
-    default:
-        alert("Mês inválido");
+do {
+    numeroTabuadaDesejada = parseInt(prompt("Atividade 8 - Qual tabuada você quer ver? (Digite 0 para sair)"));
+    
+    if (!isNaN(numeroTabuadaDesejada) && numeroTabuadaDesejada !== 0) {
+        console.log(`Tabuada do número ${numeroTabuadaDesejada}:`);
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${numeroTabuadaDesejada} x ${i} = ${numeroTabuadaDesejada * i}`);
+        }
+    }
+} while (numeroTabuadaDesejada !== 0);
+console.log("Múltiplas tabuadas encerrado.");
+
+
+// ==========================================
+// ATIVIDADE 9: Estatísticas de uma Turma
+// ==========================================
+console.log("\n--- Executando Atividade 9 ---");
+let maioresDeIdade = 0;
+
+for (let i = 1; i <= 5; i++) {
+    let idade;
+    while (true) {
+        idade = parseInt(prompt(`Atividade 9 - Cadastre a idade do aluno ${i} (entre 0 e 120):`));
+        if (!isNaN(idade) && idade >= 0 && idade <= 120) {
+            break;
+        }
+        alert("Idade inválida! Digite um valor entre 0 e 120.");
+    }
+    
+    if (idade >= 18) {
+        maioresDeIdade++;
+    }
+}
+console.log(`Quantidade de alunos maiores de idade: ${maioresDeIdade}`);
+
+
+// ==========================================
+// ATIVIDADE 10: Gerador de Escadinha
+// ==========================================
+console.log("\n--- Executando Atividade 10 ---");
+let degraus;
+
+while (true) {
+    degraus = parseInt(prompt("Atividade 10 - Digite o número de degraus para a escada (entre 1 e 10):"));
+    if (!isNaN(degraus) && degraus >= 1 && degraus <= 10) {
         break;
+    }
 }
 
-console.log("Estação do ano:", est);
-
-/* TII05Manhã */
+console.log(`Gerando escada com ${degraus} degraus:`);
+for (let i = 1; i <= degraus; i++) {
+    let linha = "";
+    for (let j = 1; j <= i; j++) {
+        linha += "*";
+    }
+    console.log(linha);
+}
