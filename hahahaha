@@ -1,324 +1,188 @@
-// ==========================================
-// 1. Acesso e Boas-Vindas
-// ==========================================
-let tentativas = 0;
-let logado = false;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Filtros Moderna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-while (tentativas < 3) {
-    let senha = prompt("Exercício 1 - Digite a senha:");
-    
-    if (senha === null || senha === "") {
-        console.log("Acesso cancelado ou campo vazio.");
-        break;
-    }
-    
-    if (senha === "1234") {
-        logado = true;
-        break;
-    }
-    
-    tentativas = tentativas + 1;
-    console.log("Senha incorreta. Tentativa " + tentativas + " de 3.");
-}
+<div class="container">
 
-if (logado) {
-    for (let i = 0; i < 5; i++) {
-        console.log("Bem-vindo ao sistema!");
-    }
-} else {
-    console.log("Fim das tentativas. Acesso bloqueado.");
-}
-
-
-// ==========================================
-// 2. Validador de Notas de um Aluno
-// ==========================================
-let somaNotas = 0;
-let cancelouEx2 = false;
-
-for (let i = 1; i <= 4; i++) {
-    let nota;
-    do {
-        let entrada = prompt("Exercício 2 - Digite a nota " + i + " (0 a 10):");
+    <div class="barra-filtros">
+        <div class="grupo-filtro">
+            <label for="buscaNome">O que você procura?</label>
+            <input type="text" id="buscaNome" class="filtro-input" placeholder="Digite o nome...">
+        </div>
         
-        if (entrada === null) {
-            cancelouEx2 = true;
-            break;
+        <div class="grupo-filtro">
+            <label for="buscaCategoria">Categoria</label>
+            <select id="buscaCategoria" class="filtro-input">
+                <option value="todos">Todas as categorias</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="casa">Casa & Banho</option>
+                <option value="esporte">Esportes</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grade-produtos">
+        <div class="card-produto" data-categoria="tecnologia">
+            <h3>Teclado Mecânico</h3>
+            <span class="tag-categoria">Tecnologia</span>
+        </div>
+        <div class="card-produto" data-categoria="casa">
+            <h3>Jogo de Toalhas</h3>
+            <span class="tag-categoria">Casa & Banho</span>
+        </div>
+        <div class="card-produto" data-categoria="esporte">
+            <h3>Bola de Futebol</h3>
+            <span class="tag-categoria">Esportes</span>
+        </div>
+        <div class="card-produto" data-categoria="tecnologia">
+            <h3>Mouse Gamer</h3>
+            <span class="tag-categoria">Tecnologia</span>
+        </div>
+        <div class="card-produto" data-categoria="casa">
+            <h3>Luminária de Mesa</h3>
+            <span class="tag-categoria">Casa & Banho</span>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+body { 
+    background-color: #f0f2f5; 
+    padding: 40px 20px; 
+    color: #333; 
+}
+
+.container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.grupo-filtro { 
+    display: flex; 
+    flex-direction: column; 
+    flex: 1; 
+    min-width: 200px; 
+}
+
+.grupo-filtro label { 
+    font-size: 14px; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+    color: #666; 
+}
+
+.filtro-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filtro-input:focus { 
+    border-color: #4a90e2; 
+}
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-produto {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eef0f2;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card-produto.escondido {
+    display: none !important;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.card-produto h3 { 
+    font-size: 18px; 
+    margin-bottom: 10px; 
+    color: #222; 
+}
+
+.tag-categoria {
+    display: inline-block;
+    background: #e1f5fe;
+    color: #0288d1;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+
+
+
+const inputNome = document.getElementById('buscaNome');
+const selectCategoria = document.getElementById('buscaCategoria');
+const cards = document.querySelectorAll('.card-produto');
+
+function filtrarProdutos() {
+    const termoBusca = inputNome.value.toLowerCase().trim();
+    const categoriaSelecionada = selectCategoria.value;
+
+    cards.forEach(card => {
+        const nomeProduto = card.querySelector('h3').textContent.toLowerCase();
+        const categoriaProduto = card.getAttribute('data-categoria');
+
+        const bateuNome = nomeProduto.includes(termoBusca);
+        const bateuCategoria = categoriaSelecionada === 'todos' || categoriaProduto === categoriaSelecionada;
+
+        if (bateuNome && bateuCategoria) {
+            card.classList.remove('escondido');
+        } else {
+            card.classList.add('escondido');
         }
-        
-        nota = parseFloat(entrada);
-    } while (isNaN(nota) || nota < 0 || nota > 10);
-    
-    if (cancelouEx2) {
-        break;
-    }
-    
-    somaNotas = somaNotas + nota;
+    });
 }
 
-if (cancelouEx2) {
-    console.log("Cálculo da média cancelado pelo usuário.");
-} else {
-    let media = somaNotas / 4;
-    console.log("Média final do aluno: " + media);
-}
+inputNome.addEventListener('input', filtrarProdutos);
+selectCategoria.addEventListener('change', filtrarProdutos);
 
 
-// ==========================================
-// 3. Menu Interativo
-// ==========================================
-let opcao;
-
-do {
-    opcao = prompt("Exercício 3 - Menu:\n1 - Mostrar Tabuada do 5\n2 - Contagem\n0 - Sair");
-    
-    if (opcao === null || opcao === "0") {
-        console.log("Menu encerrado pelo usuário.");
-        break;
-    } else if (opcao === "1") {
-        console.log("Saída da Tabuada:");
-        for (let i = 1; i <= 10; i++) {
-            console.log("5 x " + i + " = " + (5 * i));
-        }
-    } else if (opcao === "2") {
-        console.log("Saída da Contagem:");
-        for (let i = 10; i >= 0; i--) {
-            console.log(i);
-        }
-    } else {
-        console.log("Opção inválida digitada no menu: " + opcao);
-    }
-} while (opcao !== "0");
 
 
-// ==========================================
-// 4. Caixa Eletrônico
-// ==========================================
-let saldo = 500;
 
-while (saldo >= 0) {
-    let entrada = prompt("Saldo atual: R$" + saldo + "\nDigite o valor do saque (0 para sair):");
-    
-    if (entrada === null || entrada === "0") {
-        console.log("Operação bancária encerrada.");
-        break;
-    }
-    
-    let saque = parseFloat(entrada);
-    
-    if (isNaN(saque) || saque < 0) {
-        console.log("Erro: Valor de saque inválido.");
-    } 
-    else if (saque > saldo) {
-        console.log("Erro: Saque de R$" + saque + " negado. Saldo insuficiente.");
-    } 
-    else {
-        saldo = saldo - saque;
-        console.log("Saque de R$" + saque + " realizado com sucesso. Saldo restante: R$" + saldo);
-    }
-}
-
-
-// ==========================================
-// 5. Somador Dinâmico
-// ==========================================
-let qtd;
-
-do {
-    let entradaQtd = prompt("Exercício 5 - Quantos números quer somar? (Maior que 0)");
-    if (entradaQtd === null) {
-        qtd = 0;
-        break;
-    }
-    qtd = parseInt(entradaQtd);
-} while (isNaN(qtd) || qtd <= 0);
-
-if (qtd === 0) {
-    console.log("Somador dinâmico cancelado.");
-} else {
-    let totalDinamico = 0;
-    for (let i = 1; i <= qtd; i++) {
-        let entradaNum = prompt("Digite o número " + i + " de " + qtd + ":");
-        let numero = parseFloat(entradaNum);
-        
-        if (isNaN(numero)) {
-            console.log("Valor inválido pulado. Somado como 0.");
-            numero = 0;
-        }
-        totalDinamico = totalDinamico + numero;
-    }
-    console.log("Soma total acumulada: " + totalDinamico);
-}
-
-
-// ==========================================
-// 6. Jogo da Adivinhação com Replay
-// ==========================================
-let replay;
-
-do {
-    let numeroCerto = 7; 
-    let palpite;
-    let desistiu = false;
-    
-    while (palpite !== numeroCerto) {
-        let entradaJogo = prompt("Exercício 6 - Tente adivinhar o número de 1 a 10:");
-        
-        if (entradaJogo === null) {
-            desistiu = true;
-            break;
-        }
-        
-        palpite = parseInt(entradaJogo);
-        
-        if (isNaN(palpite)) {
-            console.log("Isso não é um número! Tente novamente.");
-        } else if (palpite !== numeroCerto) {
-            console.log("Palpite " + palpite + " está errado.");
-        }
-    }
-    
-    if (desistiu) {
-        console.log("Usuário desistiu do jogo da adivinhação.");
-    } else {
-        console.log("Parabéns! Você acertou o número correto: " + numeroCerto);
-    }
-    
-    let entradaReplay = prompt("Deseja jogar de novo?\n1 - Sim\nQualquer outra tecla - Não");
-    replay = parseInt(entradaReplay);
-
-} while (replay === 1);
-console.log("Jogo encerrado permanentemente.");
-
-
-// ==========================================
-// 7. Fatorial com Validação
-// ==========================================
-let numFatorial;
-let cancelouEx7 = false;
-
-while (true) {
-    let entradaFat = prompt("Exercício 7 - Digite um número inteiro positivo para o fatorial:");
-    
-    if (entradaFat === null) {
-        cancelouEx7 = true;
-        break;
-    }
-    
-    numFatorial = parseInt(entradaFat);
-    
-    if (!isNaN(numFatorial) && numFatorial >= 0) {
-        break;
-    }
-    console.log("Entrada inválida. Digite um número inteiro maior ou igual a 0.");
-}
-
-if (cancelouEx7) {
-    console.log("Cálculo do fatorial cancelado.");
-} else {
-    let fatorial = 1;
-    for (let i = 1; i <= numFatorial; i++) {
-        fatorial = fatorial * i;
-    }
-    console.log("O resultado do fatorial de " + numFatorial + " é: " + fatorial);
-}
-
-
-// ==========================================
-// 8. Múltiplas Tabuadas
-// ==========================================
-let tabuadaEscolhida;
-
-do {
-    let entradaTab = prompt("Exercício 8 - Digite qual tabuada quer ver (0 ou Cancelar para sair):");
-    
-    if (entradaTab === null || entradaTab === "0") {
-        console.log("Módulo de tabuadas finalizado.");
-        break;
-    }
-    
-    tabuadaEscolhida = parseInt(entradaTab);
-    
-    if (isNaN(tabuadaEscolhida)) {
-        console.log("Erro: Por favor, digite apenas números.");
-    } else {
-        console.log("Exibindo a Tabuada do " + tabuadaEscolhida + ":");
-        for (let i = 1; i <= 10; i++) {
-            console.log(tabuadaEscolhida + " x " + i + " = " + (tabuadaEscolhida * i));
-        }
-    }
-} while (true);
-
-
-// ==========================================
-// 9. Estatísticas de uma Turma
-// ==========================================
-let maiores = 0;
-let cancelouEx9 = false;
-
-for (let i = 1; i <= 5; i++) {
-    let idade;
-    while (true) {
-        let entradaIdade = prompt("Exercício 9 - Digite a idade do aluno " + i + " (0 a 120):");
-        
-        if (entradaIdade === null) {
-            cancelouEx9 = true;
-            break;
-        }
-        
-        idade = parseInt(entradaIdade);
-        
-        if (!isNaN(idade) && idade >= 0 && idade <= 120) {
-            break;
-        }
-        console.log("Idade inválida informada. Digite valores entre 0 e 120.");
-    }
-    
-    if (cancelouEx9) {
-        break;
-    }
-    
-    if (idade >= 18) {
-        maiores = maiores + 1;
-    }
-}
-
-if (cancelouEx9) {
-    console.log("Cadastro da turma interrompido.");
-} else {
-    console.log("Total de alunos maiores de idade cadastrados: " + maiores);
-}
-
-
-// ==========================================
-// 10. Gerador de Escadinha
-// ==========================================
-let degraus;
-let cancelouEx10 = false;
-
-while (true) {
-    let entradaDegraus = prompt("Exercício 10 - Digite a quantidade de degraus da escada (1 a 10):");
-    
-    if (entradaDegraus === null) {
-        cancelouEx10 = true;
-        break;
-    }
-    
-    degraus = parseInt(entradaDegraus);
-    
-    if (!isNaN(degraus) && degraus >= 1 && degraus <= 10) {
-        break;
-    }
-    console.log("Entrada incorreta. Escolha apenas números entre 1 e 10.");
-}
-
-if (cancelouEx10) {
-    console.log("Construção da escadinha cancelada.");
-} else {
-    console.log("Imprimindo escada de asteriscos:");
-    let escada = "";
-    for (let i = 1; i <= degraus; i++) {
-        escada = escada + "*"; 
-        console.log(escada);
-    }
-}
