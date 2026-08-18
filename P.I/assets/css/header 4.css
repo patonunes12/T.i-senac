@@ -1,0 +1,195 @@
+/* HEADER GLOBAL */
+/* CABEÇALHO */
+.cabecalho {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    min-height: 82px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-azul-noite);
+    border-bottom: 1px solid #26334A;
+}
+
+/* MARCA / LOGO */
+.marca {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* LOGO */
+.logo-imagem {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* MARCA */
+.logo-texto {
+    font-family: var(--fonte-titulo);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* "Dev" */
+.logo-dev {
+    color: var(--cor-branco);
+}
+
+/* "Hook" */
+.logo-hook {
+    color: var(--cor-roxo);
+}
+
+/* NAVEGAÇÃO */
+.navegacao {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lista-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.lista-navegacao a {
+    position: relative;
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color var(--transicao-padrao);
+}
+
+.lista-navegacao a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-roxo);
+    transition: width var(--transicao-padrao);
+}
+
+.lista-navegacao a:hover,
+.lista-navegacao a[aria-current="page"] {
+    color: var(--cor-branco);
+}
+
+.lista-navegacao a:hover::after,
+.lista-navegacao a[aria-current="page"]::after {
+    width: 100%;
+}
+
+/* MENU HAMBURGUER */
+.botao-menu {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    background: transparent;
+    border: 0;
+}
+
+.botao-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    background-color: var(--cor-branco);
+    transition:
+        transform var(--transicao-padrao),
+        opacity var(--transicao-padrao);
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+
+    .cabecalho {
+        padding: 0 25px;
+        gap: 25px;
+    }
+
+    .lista-navegacao {
+        gap: 18px;
+    }
+
+    .lista-navegacao a {
+        font-size: 13px;
+    }
+
+    .formulario-busca {
+        width: 175px;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+
+    .cabecalho {
+        min-height: 68px;
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    .navegacao {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: var(--cor-azul-noite);
+        border-bottom: 1px solid #26334A;
+    }
+
+    .navegacao.menu-aberto {
+        display: block;
+    }
+
+    .lista-navegacao {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .lista-navegacao a {
+        font-size: 15px;
+    }
+
+    .botao-menu {
+        display: block;
+    }
+
+    /* Animação do hamburger para X */
+    .botao-menu.menu-aberto span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .botao-menu.menu-aberto span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .botao-menu.menu-aberto span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+}

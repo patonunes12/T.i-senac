@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devhook</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header 4.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="cabecalho">
+ 
+        <a href="#" class="marca" aria-label="DevHook - Página inicial">
+ 
+            <span class="logo-imagem">
+ 
+                <img src="assets/img/logo/logo-devhook.png" alt="Logo DevHook">
+ 
+            </span>
+ 
+            <span class="logo-texto">
+ 
+                <span class="logo-dev">Dev</span><span class="logo-hook">Hook</span>
+ 
+            </span>
+ 
+        </a>
+ 
+        <nav class="navegacao" id="navegacao-principal" aria-label="Navegação principal">
+ 
+            <ul class="lista-navegacao">
+ 
+                <li>
+                    <a href="vagas.html" aria-current="page">
+                        Vagas
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="recrutadores.html">
+                        Recrutadores
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="desafios.html">
+                        Desafios
+                    </a>
+                </li>
+ 
+                <li>
+                    <a href="perfil.html">
+                        Meu perfil
+                    </a>
+                </li>
+ 
+            </ul>
+ 
+        </nav>
+ 
+        <!-- MENU HAMBURGER -->
+        <button type="button" class="botao-menu" id="botao-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao-principal">
+ 
+            <span></span>
+            <span></span>
+            <span></span>
+ 
+        </button>
+ 
+    </header>   
+    
+    
+    <main>
+        <div id="container">
+            <section class="banner-vagas" aria-labelledby="titulo-banner">
+ 
+                <div class="conteudo-banner">
+    
+                    <h1 id="titulo-banner">
+                        Encontre seu proximo escravo clt.
+                    </h1>
+    
+                    <p>
+                        Encontre Desenvolvedores para sua empresa.
+                    </p>
+    
+                </div>
+ 
+            </section>
+
+            <div class="container-filtros">
+                <div class="filtro-item">
+                    <label for="buscaNome">O que você procura?</label>
+                    <input type="text" id="buscaNome" class="filtro-input" placeholder="Digite o nome...">
+                </div>
+                
+                <div class="grupo-filtro">
+                    <label for="buscaCategoria">Experiencia</label>
+                    <select id="buscaCategoria" class="filtro-input">
+                        <option value="todos">Todas as categorias</option>
+                        <option value="Front-end">Front-end</option>
+                        <option value="Back-end">Back-end</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Full-stack">Full-stack</option>
+                        <option value="Desktop">Desktop</option>
+                        <option value="Embedded">Embedded</option>
+                        <option value="Cybersecurity Developer">Cybersecurity Developer</option>
+                        <option value="Cientista de Dados">Cientista de Dados</option>
+                        <option value="DevOps">DevOps</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container-devs">
+
+                <article class="devs-calendario" data-categoria="Front-end">
+                    <h3>Lucas Silva</h3>
+                    <p>Olá! Meu nome é Lucas Silva e sou focado em construir interfaces web modernas, bonitas e totalmente responsivas através de código de alto nível. Eu crio o visual de sites interativos no navegador usando scripts rápidos que rodam direto no cliente.</p>
+                    <span class="tag-categoria">Front-end</span>
+                </article>
+
+                <article class="devs-calendario"data-categoria="Back-end" >
+                    <h3>Mariana Costa</h3>
+                    <p>Prazer, sou a Mariana Costa. Minha paixão é construir de forma rápida a estrutura lógica e segura que fica por trás dos panos de grandes sistemas, desenvolvendo regras de negócio complexas e gerenciando servidores robustos com bancos de dados.</p>
+                    <span class="tag-categoria">Back-end</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Mobile">
+                    <h3>Thiago Oliveira</h3>
+                    <p>E aí! Sou o Thiago Oliveira e utilizo linguagens de alto nível para transformar ideias em aplicativos fluidos para smartphones. Eu crio aplicações modernas para celulares, configurando funções do aparelho e garantindo uma ótima experiência móvel.</p>
+                    <span class="tag-categoria">Mobile</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Front-end Back-end">
+                    <h3>Beatriz Santos</h3>
+                    <p>Olá, sou a Beatriz Santos. Como programadora de alto nível, conecto o visual e a lógica para entregar um produto completo do início ao fim, transitando facilmente entre o banco de dados e a interface do usuário no fluxo completo.</p>
+                    <span class="tag-categoria">Front-end</span>
+                    <span class="tag-categoria">Back-end</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Desktop">
+                    <h3>Roberto Almeida</h3>
+                    <p>Olá! Meu nome é Roberto Almeida e sou especialista em criar softwares locais que são traduzidos em código binário para máxima performance. Desenvolvo programas robustos que rodam direto no Windows, Mac ou Linux aproveitando a máquina.</p>
+                    <span class="tag-categoria">Desktop</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Tecnologia">
+                    <h3></h3>
+                    <p>jhktgdsfg~sdllllllllllllllllllllllllllllllllllg foi forjado pelos Dark Interlopers.</p>
+                    <span class="tag-categoria">Tecnologia</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Tecnologia">
+                    <h3></h3>
+                    <p>jhktgdsfg~sdllllllllllllllllllllllllllllllllllg foi forjado pelos Dark Interlopers.</p>
+                    <span class="tag-categoria">Tecnologia</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Tecnologia">
+                    <h3></h3>
+                    <p>jhktgdsfg~sdllllllllllllllllllllllllllllllllllg foi forjado pelos Dark Interlopers.</p>
+                    <span class="tag-categoria">Tecnologia</span>
+                </article>
+
+                <article class="devs-calendario" data-categoria="Tecnologia">
+                    <h3></h3>
+                    <p>jhktgdsfg~sdllllllllllllllllllllllllllllllllllg foi forjado pelos Dark Interlopers.</p>
+                    <span class="tag-categoria">Tecnologia</span>
+                </article>
+
+            </div>
+
+        </div>
+        
+    </main>
+ 
+
+    <footer class="rodape">
+
+        <div class="conteudo-rodape">
+
+            <a href="index.html" class="marca-rodape" aria-label="DevHook - Página inicial">
+
+                <span class="logo-rodape-imagem">
+
+                    <img src="assets/img/logo/logo-devhook.png" alt="Logo DevHook">
+
+                </span>
+
+                <span class="nome-rodape">
+
+                    <span class="nome-rodape-dev">
+                        Dev
+                    </span>
+
+                    <span class="nome-rodape-hook">
+                        Hook
+                    </span>
+
+                </span>
+
+            </a>
+
+            <p class="direitos-rodape">
+                © 2026 DevHook - Desenvolvido para o Projeto Integrador.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
