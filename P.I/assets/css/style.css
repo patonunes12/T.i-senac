@@ -147,6 +147,23 @@
     border-color: #4a90e2; 
 }
 
+.container-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tag-vaga {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+
 
 .container-devs {
     display: grid;
