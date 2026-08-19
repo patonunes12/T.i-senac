@@ -83,6 +83,11 @@
         ),
         #1E293B;
 }
+
+h3{
+    margin-bottom: 15px;
+    
+}
  
 .conteudo-banner {
     width: min(100% - 48px, 1200px);
@@ -112,11 +117,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    background: #ffffff;
+    background: var(--cor-cinza-claro);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     margin-bottom: 30px;
+    margin: 30px;
 }
 
 .filtro-item, .grupo-filtro { 
@@ -169,6 +175,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 
@@ -180,7 +188,7 @@
 }
 
 .devs-calendario {
-    background: #ffffff;
+    background: var(--cor-cinza-claro);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -215,7 +223,7 @@
 
 .tag-categoria {
     display: inline-block;
-    background: #c4e6f7;
+    background: #c4eafd;
     color: #0288d1;
     padding: 4px 10px;
     border-radius: 20px;
