@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Desenvolvedor</title>
-    <link rel="stylesheet" href="./assets/css/perfil.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
+    <title>Painel da Empresa</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/perfil-recrutador.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
 </head>
 <body>
- <header class="cabecalho">
+
+    <header class="cabecalho">
  
         <a href="#" class="marca" aria-label="DevHook - Página inicial">
  
@@ -71,17 +72,17 @@
     </header>   
 
     <div class="layout-pagina">
-    
+        
         <aside class="barra-lateral-fixa">
             <div class="logo-sidebar">
-                <span>Navegação</span>
+                <span>Recrutador</span>
             </div>
             <nav class="menu-sidebar">
-                <a href="recrutador.html" class="item-menu ativo">Página Inicial</a>
-                <a href="#" class="item-menu">Minhas Vagas</a>
-                <a href="#" class="item-menu">Projetos</a>
-                <a href="#" class="item-menu">Estatísticas</a>
-                <a href="#" class="item-menu">Preferências</a>
+                <a href="recrutador.html" class="item-menu ativo"> Painel Geral</a>
+                <a href="#" class="item-menu"> Publicar Vaga</a>
+                <a href="#" class="item-menu"> Candidatos</a>
+                <a href="#" class="item-menu"> Relatórios</a>
+                <a href="#" class="item-menu"> Perfil Empresa</a>
             </nav>
         </aside>
 
@@ -90,28 +91,28 @@
                 
                 <section class="banner-usuario">
                     <div class="usuario-lateral">
-                        <div class="usuario-avatar-wrapper">
-                            <img src="https://placeholder.com" alt="Foto de Perfil" class="usuario-foto">
+                        <div class="usuario-avatar">
+                            <img src="./assets/img/icones/teste-foto.jpg" alt="Logo da Empresa" class="usuario-foto">
                         </div>
-                        <h2>Gustavo do arrocha</h2>
-                        <button class="btn-preferencias">⚙ Preferências</button>
-                        <p class="usuario-email">##########@gmail.com</p>
+                        <h2>empresa talta</h2>
+                        <button class="btn-preferencias">Configurações</button>
+                        <p class="usuario-email">##############@gmail.com</p>
                     </div>
 
                     <div class="usuario-conteudo-painel">
-                        <h3>Ações e Atalhos</h3>
+                        <h3>Resumo de Recrutamento</h3>
                         <div class="grade-atalhos">
                             <div class="card-atalho">
                                 <div class="icone-atalho"></div>
-                                <span>Minhas Vagas</span>
+                                <span>Vagas Ativas</span>
                             </div>
                             <div class="card-atalho">
                                 <div class="icone-atalho"></div>
-                                <span>Projetos</span>
+                                <span>Inscrições</span>
                             </div>
                             <div class="card-atalho">
                                 <div class="icone-atalho"></div>
-                                <span>Estatísticas</span>
+                                <span>Em Análise</span>
                             </div>
                         </div>
                     </div>
@@ -119,28 +120,28 @@
 
                 <section class="bloco-vagas-andamento">
                     <div class="vagas-cabecalho">
-                        <h3>Candidaturas em andamento</h3>
+                        <h3>Processos seletivos criados</h3>
                         <span class="seta-retratil">▲</span>
                     </div>
                     
                     <div class="vaga-linha">
                         <div class="vaga-info">
                             <strong>Desenvolvedor Front-end Júnior</strong>
-                            <span>Google</span>
+                            <span>Publicado em: 10/04/2026</span>
                         </div>
                         <div class="vaga-prazo">
-                            <span>Próxima entrevista: 22/04/2026</span>
+                            <span>Prazo de inscrição: 30/04/2026</span>
                         </div>
                         <div class="vaga-status">
-                            <span class="badge-feedback">Aguardando Feedback</span>
+                            <span class="badge-feedback">24 Candidatos</span>
                         </div>
                         <div class="vaga-atualizacao">
-                            <span>Atualizado em 15/04/2026</span>
+                            <span>Última triagem hoje</span>
                         </div>
                     </div>
 
                     <div class="vagas-acao">
-                        <button class="btn-ver-processos">Ver todos os processos</button>
+                        <button class="btn-ver-processos">Gerenciar todas as vagas</button>
                     </div>
                 </section>
 
@@ -150,8 +151,7 @@
     </div>
 
 
-
-     <footer class="rodape">
+ <footer class="rodape">
 
         <div class="conteudo-rodape">
 
