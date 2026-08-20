@@ -99,11 +99,17 @@ body {
 .botao-curriculo6{
     display: flex;
     flex-direction: column-reverse;
-    
+    cursor: pointer;
 
 }
 
+.botao-curriculo5:hover{
+    transition: background 0.2s;
+    background: #4f46e5;
+}
+
 .botao-curriculo5{
+    cursor: pointer;
     border-radius: 8px;
     background-color: #6366f1;
     color: #c7d2fe;
@@ -114,6 +120,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 .usuario-avatar{

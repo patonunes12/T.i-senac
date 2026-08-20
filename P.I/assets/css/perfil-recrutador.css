@@ -185,6 +185,11 @@
 
 }
 
+.botao-curriculo1:hover{
+    transition: background 0.2s;
+    background: #4f46e5;
+}
+
 .botao-curriculo1{
     border-radius: 8px;
     background-color: #6366f1;
