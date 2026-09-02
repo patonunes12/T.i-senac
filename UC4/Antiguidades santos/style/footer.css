@@ -1,0 +1,51 @@
+/* ================================
+     Footer da página
+================================ */
+footer {
+    background-color: #008B8B;
+    color: #F6EFE4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-conteudo h3 {
+    font-family: "Playfair Display", serif;
+}
+
+.linha-footer {
+    margin: auto;
+    width: 450px;
+    height: 2px;
+    background-color: #D27D2D;
+}
+
+.links-footer a {
+    margin: 15px;
+    text-decoration: none;
+    color: #F5F5DC;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.links-footer a:hover {
+    color: #D27D2D;
+}
+
+/* =============================================
+     Media Query: Tablet
+============================================= */
+@media (max-width: 600px) {
+    footer{
+        padding: 30px 15px;
+    }
+
+    .footer-conteudo h3 {
+        font-size: 1.5rem;
+    }
+}

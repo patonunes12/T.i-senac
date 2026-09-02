@@ -1,0 +1,13 @@
+var qntd = Number(prompt("Qual a quantidade desse item"))
+var produ = prompt("O item precisa de reabastecimento rapido ? S se sim N se não")
+
+if(qntd > 5 && (produ ==  "N" || "S")){
+    result = "O estoque esta sobre controle"
+
+}else if(qntd <= 5 && (produ == "S" || "N")){
+    result = alert("Reasbestecimento urgente de produto")
+
+}
+
+
+console.log(result)

@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background-color:#afdcd1;
+
+    margin-bottom: 20px;
+}
+
+body{
+    background-color: whitesmoke
+}
+
+
+
+.item-galeria{
+
+ float: left;
+
+margin-left: 45pc;
+ 
+ text-align: center;
+ background-color: #afdcd1;
+
+ padding: 10px 30px 45px 30px;
+
+ border: 3px solid  #163032;
+
+box-shadow: 0 4px 8px 0 rgb(176, 217, 207), 0 6px 20px 0 rgb(176, 217, 207);
+
+border-radius: 8px;
+
+overflow: hidden;
+
+}
+input[type=text], input[type=password]{
+    border: 2px solid #163032;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.botao-login{
+    background-color: #afdcd1;
+    color: #163032; 
+    border-color:black ;
+    border-radius: 8px;
+    text-align: center;
+    font-weight:bolder;
+    width: 150px;
+    height: 40px;
+    
+    padding: none;
+    
+}
+
+#icon{
+    margin-top: 20px;
+    margin-right:97px;
+    margin-left: auto;
+    
+}
+
+#imagem{
+    float: left;
+  
+    margin-top: 2px;
+    
+}
+
+#nome{
+    float: right;
+    margin-top: 50px;
+}
+
+
+
+
+a{
+    color: black;
+    text-decoration: none;
+}

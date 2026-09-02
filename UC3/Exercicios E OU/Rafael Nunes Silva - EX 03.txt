@@ -1,0 +1,12 @@
+var conta = prompt("Qual o nome da conta ?")
+var senha = prompt("Qual a senha da conta ?")
+ 
+
+if(conta == "caixa01" && senha == "12345"){
+   result = true
+
+}else{
+   result = false
+}
+
+        console.log((result) ? "Acesso liberado" : "Acesso bloqueado")

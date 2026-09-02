@@ -1,0 +1,21 @@
+var valor = Number(prompt("Qual o valor da compra"));
+var aniver = prompt("Hoje e seu aniversario ? Digite S se sim ou N se não");
+var cartao
+
+if(aniver == "S"){
+   result = ("Você conseguiu um desconto de 15%")
+   desc = (valor * 15)/100
+   final = valor - desc
+
+}else if((cartao = prompt("Você possui cartão fidelidade ? Digite S se sim ou N se não")), cartao == "S"){
+   result = ("Você conseguiu um desconto de 15%")
+   desc = (valor * 15)/100
+   final = valor - desc
+
+}else if(aniver == "N" && cartao == "N"){
+   result = ("Você não conseguiu o desconto de 15%")
+   final = valor
+
+}
+
+console.log("O valor da compra foi de R$" + valor + " e " + result + " o valor final ficou R$" + final)

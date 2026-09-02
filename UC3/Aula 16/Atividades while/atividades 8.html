@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+    <script>
+       
+    
+        let tabuadaEscolhida;
+
+        do {
+            let entradaTab = prompt("Exercício 8 - Digite qual tabuada quer ver (0 ou Cancelar para sair):");
+            
+            if (entradaTab === null || entradaTab === "0") {
+                console.log("Módulo de tabuadas finalizado.");
+                break;
+            }
+            
+            tabuadaEscolhida = parseInt(entradaTab);
+            
+            if (isNaN(tabuadaEscolhida)) {
+                console.log("Erro: Por favor, digite apenas números.");
+            } else {
+                console.log("Exibindo a Tabuada do " + tabuadaEscolhida + ":");
+                for (let i = 1; i <= 10; i++) {
+                    console.log(tabuadaEscolhida + " x " + i + " = " + (tabuadaEscolhida * i));
+                }
+            }
+        } while (true);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body> 
+    
+    <h1> Soma de imc</h1>
+    <div class="imc">
+
+       
+        <input id="peso" type="number" placeholder="Digite seu peso">   
+        <input id="altura" type="number" placeholder="Digite sua altura">
+        
+        <input id="Calcular" type="button" onclick="Calcular()" value="calcular">
+        
+        <h4 id="respos"></h4>
+
+    </div>
+
+    <script>
+        function Calcular(){
+            var peso = window.document.getElementById("peso")
+            var altura = window.document.getElementById("altura")
+            var respos = window.document.getElementById("respos")
+            var respos2 = window.document.getElementById("respos2")
+
+            var p1 = Number(peso.value)
+            var a2 = Number(altura.value)
+
+            if( a2 >3 ){
+                a2 = a2 / 100
+
+            }
+
+            var soma = (p1 / (a2 * a2)).toFixed(1)
+            var total = ''
+
+
+            if(soma <18.5){
+                total ="Magreza ou baixo peso"
+                respos.style.color = "cyan"
+
+            }else if(soma >=18.5 && soma <= 24.9 ){
+                total ="Peso normal"
+                respos.style.color = "green"
+
+            }else if(soma >=25.0 && soma <= 29.9){
+                total ="Sobrepeso"
+                respos.style.color = "yellow"
+
+            }else if(soma >=30.0 && soma <= 34.9){
+                total ="Obesidade grau I"
+                respos.style.color = "orange"
+
+            }else if(soma >= 35 && soma <= 39.9){
+                total ="Obesidade grau II"
+                respos.style.color = "red"
+
+            }else{
+                total ="Obesidade grau III"
+                respos.style.color = "Grena"
+            }
+            
+            respos.innerText = `O seu imc é ${soma} ${total}`
+        }
+
+
+
+        
+    </script>
+</body>
+</html>

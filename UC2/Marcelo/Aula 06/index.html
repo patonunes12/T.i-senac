@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06</title>
+    <!--
+    Formulario:
+            input
+                email
+                telefeno
+                numero
+            
+            select        
+    
+    
+    -->
+
+</head>
+<body>
+
+    <form action="Home.html" methdo="post">
+        <label for="nome"> Nome </label>
+        <input type="text" name="nome" id="nome"/>
+
+        <br><br>
+
+        <label for="E-mail">e-mail</label>
+        <input type="email" name="E-mail" id="E-mail" required>
+
+        <br><br>
+
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade" max="130" min="1">
+
+        <br><br>
+
+        <label for="telefone">telefone</label>
+        <input type="tel" nome="telefone" id="telefone"/>
+        
+        <br><br>
+        <label For="estado">Estado</label>
+        <select name="Estado" id="estado">
+            <option value="">Selecione</option>
+            
+            <optgroup label="Sul">
+                <option value="PR">Paraná</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="RS">Rio Grande do Sul</option>
+            </optgroup>
+
+            <optgroup label="Nordeste">
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+            </optgroup>
+
+        </select>
+
+        <br><br>
+
+        <textarea name="message" rows="10" cols="30" placeholder="Digite aqui seu texto"></textarea>
+
+        <br><br>
+
+        <label>Qual a sua lingaguem de programação favorita</label>
+        <br>
+        <input type="radio" name="favorita" id="favorita-1" value="JavaScript">
+        <label for="JavaScript">JavaScript</label>
+
+        <input type="radio" name="favorita" id="favorita-1" value="Python">
+        <label for="Python">Python</label>
+
+        <input type="radio" name="favorita" id="favorita-1" value="C">
+        <label for="C">C#</label>
+
+        <br><br>
+       
+        <input type="checkbox" name="aceito" id="aceito"/>
+        <label for="aceito">aceito os termos de contrato</label>
+        
+        <br><br>
+
+        <input type="submit" value="Enviar">
+
+        <input type="reset" value="Limpar">
+        
+
+    </form>
+    
+    
+
+
+
+
+
+</body>
+</html>

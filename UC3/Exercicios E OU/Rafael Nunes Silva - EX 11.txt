@@ -1,0 +1,14 @@
+var desc = prompt("Essa e sua primeira compra com a gente ? S se sim N se não")
+var comp = Number(prompt("Qual o valor da compra ?"))
+
+
+if(desc == "S" && comp >= 50){
+     result = comp - 10
+     final = ("Com o desconto de R$ 10 para novos cliente fica R$ ")
+
+}else{
+     result = comp
+     final =("fica R$ ")
+}
+
+console.log("O valor da compra " + final + result)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+    <script>
+        
+    
+        let saldo = 500;
+
+        while (saldo >= 0) {
+            let entrada = prompt("Saldo atual: R$" + saldo + "\nDigite o valor do saque (0 para sair):");
+            
+            if (entrada === null || entrada === "0") {
+                console.log("Operação bancária encerrada.");
+                break;
+            }
+            
+            let saque = parseFloat(entrada);
+            
+            if (isNaN(saque) || saque < 0) {
+                console.log("Erro: Valor de saque inválido.");
+            } 
+            else if (saque > saldo) {
+                console.log("Erro: Saque de R$" + saque + " negado. Saldo insuficiente.");
+            } 
+            else {
+                saldo = saldo - saque;
+                console.log("Saque de R$" + saque + " realizado com sucesso. Saldo restante: R$" + saldo);
+            }
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

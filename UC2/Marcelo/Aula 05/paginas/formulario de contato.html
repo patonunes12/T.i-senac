@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario de Contato</h1>
+
+        <form action="./Agradecimendo.html" methdo="post"></formaction>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+
+            <br><br>
+
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email">
+            
+            <br><br>
+
+            <label for="num">Numero</label>
+            <input type="tel" name="numero" id="num">
+
+            <br><br>
+
+            <label for="estado">Estado</label>
+                <select name="Estado" id="estado">
+                    <option value="sel">Selecione o seu e Estado</option>
+
+                    <optgroup label="Sudeste">
+                        <option value="ES">Espírito Santo</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                    </optgroup>
+                </select>
+             
+                <br><br>
+
+             <label for="cidade">Cidade</label>
+                <select name="cidade" id="cidade">
+                    <option value="sel">Selecione sua Cidade</option>
+
+                    <optgroup label="Espirito Santo">
+                        <option value="anchi">Anchieta</option>
+                        <option value="cacho">Cachoeiro de Itapemirim</option>
+                        <option value="marata">Marataízes</option>
+                        <option value="vit">Vitória</option>
+                    </optgroup>  
+                    
+                    <optgroup label="Minas Gerais">
+                        <option value="del">Delfim Moreira</option>
+                        <option value="ita">Itajubá</option>
+                        <option value="passa">Passa Quatro</option>
+                        <option value="pou">Pouso Alto</option>
+                    </optgroup>
+
+                    <optgroup label="Rio de Janeiro">
+                        <option value="Barra">Barra Mansa</option>
+                        <option value="tit">Itatiaia</option>
+                        <option value="porto">Porto Real </option>
+                        <option value="resend">Resende</option>
+                    </optgroup>
+
+                    <optgroup label="São Paulo">
+                        <option value="pinda">Pindamonhangaba</option>
+                        <option value="jose">São José dos Campos</option>
+                        <option value="tret">Tremembé</option>
+                        <option value="Taub">Taubaté</option>
+                    </optgroup>
+                </select>
+            
+            <br><br>
+
+            <textarea name="message" rows="20" cols="40" placeholder="Digite aqui seu problema"></textarea>
+
+            <br>
+            
+            <h3><a href="termos.html" target="_blank">Leia os termos de serviço</a></h3>
+
+            <input type="checkbox" name="aceito" id="aceito">
+            <label>Aceito os termos de serviçoa</label>
+
+            <br><br>
+            
+            <input type="submit" value="Enviar">
+
+            <input type="reset" value="Limpar">
+            <br><br><br>
+
+        </form>
+        
+       <H2> <a href="../index.html">Voltar</a> </H2>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+var produ = prompt("O produto tem em estoque ? S se sim N se não")
+var esto1, esto2
+
+if(produ == "S"){
+   result = prompt("Escolha o numero da loja (LOJA 1), (LOJA2)")
+
+}else{
+   result = "Retirada na loja negada"
+}
+
+if(result == "1" || result == "2"){
+   final = "Retirada na loja liberada"
+
+}else{
+   final = "Retirada na loja negada"
+}
+
+
+console.log(final)

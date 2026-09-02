@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <script>
+        
+        let somaNotas = 0;
+        let cancelouEx2 = false;
+
+        for (let i = 1; i <= 4; i++) {
+            let nota;
+            do {
+                let entrada = prompt("Exercício 2 - Digite a nota " + i + " (0 a 10):");
+                
+                if (entrada === null) {
+                    cancelouEx2 = true;
+                    break;
+                }
+                
+                nota = parseFloat(entrada);
+            } while (isNaN(nota) || nota < 0 || nota > 10);
+            
+            if (cancelouEx2) {
+                break;
+            }
+            
+            somaNotas = somaNotas + nota;
+        }
+
+        if (cancelouEx2) {
+            console.log("Cálculo da média cancelado pelo usuário.");
+        } else {
+            let media = somaNotas / 4;
+            console.log("Média final do aluno: " + media);
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

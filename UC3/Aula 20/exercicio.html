@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de função</title>
+<script>
+
+    var saldo = 500
+    var saque, deposito
+    var opcao 
+
+    while (opcao != 3){
+        opcao = Number(prompt("Seu saldo é : R$ " + saldo + "\nEscolha uma opção" + "\n" + "Digite 1 para saque" +
+        "\n" + "Digite 2 para deposito " + "\n" + "Digite 3 para sair"))
+
+        switch(opcao){
+            case 3:
+                break
+
+            case 2:
+                calcular2()
+                break
+
+            case 1:
+                calcular1()
+                break
+            
+            default:
+                alert(" QUE PORRA E ESSA JARVIS" + minhaImagem)
+
+        }
+
+    }
+    alert("Obrigado por usar nosso banco")
+
+    function calcular2(){
+        var deposito = Number(prompt("Digite o valor que deseja depositar"))
+        var calcular = saldo + deposito;
+        saldo = calcular;
+        alert("Deposito concluido \n Seu saldo é de : R$ "+ saldo)
+    }
+
+    
+    function calcular1(){
+        var saque = Number(prompt("Digite o valor que deseja sacar"))
+        if(saldo >= saque ){
+        var calculo = saldo - saque;
+        saldo = calculo
+        alert("Saldo concluido \n seu saldo e de : R$"+ saldo)
+        }else{
+            alert("Saldo insuficiente")
+        }         
+                            
+    }
+
+
+   
+
+
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

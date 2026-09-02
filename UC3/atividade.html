@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let pergun = Number(prompt("Qual a quantidade de produtos você vai comprar?"));
+
+        if (isNaN(pergun) || pergun <= 0) {
+            alert("A quantidade informada não é permitida.");
+            console.log("A quantidade informada não é permitida.");
+        } else {
+            
+            let entre = Number(prompt("Como deseja receber o produto? \nDigite:\n1 = Retirar na Loja 1\n2 = Retirar na Loja 2\n3 = Entrega"));
+            let loja1 = 5, loja2 = 3;
+            let final = "";
+            let estoque = "";
+
+            if (pergun <= loja2) {
+                estoque = "2"; 
+            } else if (pergun <= loja1) {
+                estoque = "1"; 
+            } else {
+                estoque = "3"; 
+            }
+
+            if (entre == 3) {
+                final = "Obrigado pela sua compra! Seu produto será entregue nos próximos dias.";
+            }
+
+            else if (estoque == "3") {
+                final = "Quantidade indisponível para retirada imediata nas lojas. O produto será entregue nos próximos dias.";
+            }
+
+            else if (entre == 1 && (estoque == "1" || estoque == "2")) {
+                final = "Retirada autorizada na Loja 1.";
+            } 
+
+            else if (entre == 2 && estoque == "2") {
+                final = "Retirada autorizada na Loja 2.";
+            } 
+
+            else {
+                final = "Sem estoque na Loja 2. Por favor, retire na Loja 1.";
+            }
+
+            alert(final);
+            console.log(final);
+        } 
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

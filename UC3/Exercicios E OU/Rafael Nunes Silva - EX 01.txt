@@ -1,0 +1,10 @@
+var valor = Number(prompt("Qual o valor da compra ?"));
+var regiao = prompt("Qual a região que você mora ?");
+
+if(valor >= 200 && regiao == "Sudeste"){
+    result = ("tem direito a frete gratis ")
+}else{
+    result = ("não tem direito a frete gratis")
+};
+
+console.log("A sua compra foi de R$" + valor + " E você " + result)

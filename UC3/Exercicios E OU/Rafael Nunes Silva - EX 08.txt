@@ -1,0 +1,10 @@
+var hora = Number(prompt("Qual hora atual ?apenas numeros inteiros"))
+        
+if(hora >= 9 && hora <= 18 ){
+    result = "Suporte online"
+
+}else {
+    result = "Suporte offline, Horario de funcionamento das 9h as 18h "
+}
+
+console.log(result)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <script>
+
+        /*let num = Number(prompt("Escreva um numero inteiro entre 1 e 10 ? :"));
+        
+        if(num >= 1 && num <= 10){
+        
+            for (let z = 1; z <= 10; z += 1) {
+            console.log(`${num} X ${z} = ${num * z}`);
+            }
+        }else{
+            alert("Número invalido");
+        }
+        */
+
+        let num = Number(prompt("Escreva um numero inteiro entre 1 e 9 ? :"));
+
+        while (num > 1 || num < 9) {
+        num = Number(prompt("Número invalido, digite um novo numero entre 1 e 9 :"));
+        }
+
+        for (let z = 1; z <= 10; z += 1) {
+        console.log(`${num} X ${z} = ${num * z}`);
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

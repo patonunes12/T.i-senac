@@ -1,0 +1,197 @@
+/* ------------- Estrutura do Site -------------*/
+  body{
+
+        background-color: #f4f2ec;
+        background-image: url(../imagens/fundo.png);
+        background-repeat: repeat-x;
+
+        /* background: #f4f2ec url(../Imagens/fundo.png) repeat-x*/
+
+        font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+  }
+
+
+#container{
+
+    width: 1080px;
+    margin: 0 auto;
+}
+a:link, a:active, a:visited{
+    text-decoration: none;
+    color: #af670a;
+}
+
+a:hover{
+    color: #227115;
+}
+
+/*---------- Estilo do Logo --------------*/
+
+#logo h1{
+    float: left;
+}
+
+#logo a{
+    width: 248px;
+    height: 21px;
+    background: url(../imagens/logo.png) no-repeat;
+    text-indent: -9999px;
+    display: block;
+}
+
+/*----------Barra de Navegação-----------*/
+
+header{
+    padding: 15px 0;
+    height: 105px;
+
+}
+
+nav ul{
+    list-style: none;
+    margin: 20px;
+    float: right; 
+    
+}
+
+nav ul li{
+    float:left;
+}
+
+nav ul li a:link{
+    display: block;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    border-bottom: 1px solid #227115;
+}
+
+
+/*---------- Principal -----------*/
+
+#conteudo{
+  
+    background-color: none;
+    width: 710px;
+    float: left;
+    
+    
+}
+
+aside{
+    width: 350px;
+    background-color: #ebe7dd;
+    float: right;  
+    padding-bottom: 30px; 
+    margin-bottom: 30px;
+}
+
+h4{
+    color: #86521a;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+}
+.postagens{
+    float: left;
+    width: 310px;
+}
+
+
+section#visita{
+
+    padding: 10px 27px 27px 27px;
+    margin-top: 10px;
+    background: #ebe7dd;
+}
+
+
+section#galeria{
+    padding: 0 27px 0 27px;
+}
+
+section#galeria a{
+    display: block;
+    background: url(../Imagens/fundo-foto.png) no-repeat;
+    float: left;
+    padding: 17px 15px 17px 15px;
+    margin: 10px 0 0 20px;
+}
+
+.postagens{
+    float: left;
+    width: 310px;
+    margin: 25px, ;
+}
+
+section#galeria img{
+    margin-left: 2px;
+    margin-top: 3px;
+}
+
+h3{
+    color: #227115;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+}
+
+
+
+/*------------Formularios---------*/
+
+input{
+    height: 20px;
+    width: 80px;
+    background-color: #fff;
+    border: none;
+    font-size: 1em;
+}
+
+input.campo{
+    border: 1px solid #ada484
+}
+
+input.botao{
+    background: #9b9271;
+    color: white;
+    width: 100%;
+    height: 40px;
+    font-size: 1.2em;
+    
+}
+
+
+fieldset{
+    border: none;
+}
+
+legend{
+    display: none;
+}
+
+/*-------RODAPÉ---------*/
+
+footer{
+    clear: both;
+    margin-top: 30px;
+    background:  url(../Imagens/fundo-rodape.png) no-repeat top center;
+    text-align: center;
+    padding: 20px 30px 0 ;
+
+    
+}
+
+footer>p a{
+        padding: 2px 10px;
+}
+
+
+
+.borda{
+    border: solid red 1px
+}

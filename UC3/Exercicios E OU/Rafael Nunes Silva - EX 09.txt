@@ -1,0 +1,11 @@
+var qntd = Number(prompt("Quantas camiseta foram compradas ?"))
+        var mode = prompt("Qual o modelo das camisetas ?")
+
+        if(qntd >= 3 && mode == "Basica"){
+            result = "Você conseguiu a promoção leve 3 e pague 2"
+
+        }else{
+            result = "Você não conseguiu a promoção"
+        }
+
+        console.log(result)

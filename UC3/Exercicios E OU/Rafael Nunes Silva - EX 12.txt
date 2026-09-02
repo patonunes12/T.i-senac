@@ -1,0 +1,12 @@
+var note = prompt("A sua compra atual tem um notebook ? S se sim N se não")
+var valor = prompt("Qual o valor da compra ?")
+
+if(note == "S" || valor >= 3000 ){
+    result = "Você ganhou um brinde"
+
+}else{
+    result = "Obrigado"
+
+}
+
+console.log(result + " por comprar com a gente")

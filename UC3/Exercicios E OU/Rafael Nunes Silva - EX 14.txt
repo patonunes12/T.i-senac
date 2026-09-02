@@ -1,0 +1,17 @@
+var valor = Number(prompt("Qual o valor da compra ?"))
+var cupom = prompt("Escreva o codigo do cupom de desconto sazonal")
+var mes = prompt("Qual o mês atual ?")
+
+if(cupom == "FESTA15" && mes == ("Junho" || "Julho" )){
+    tot = (valor * 15)/100
+    total = valor - tot
+    result = "O cupom foi aplicado com sucesso e o "
+
+}else{
+    total = valor
+    result = "o cupom não foi aplicado "
+
+}
+
+        
+console.log(result + "valor da compra ficou R$ " + total)

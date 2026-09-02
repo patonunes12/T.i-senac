@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovação</title>
+    <script>
+
+        var media = 7;
+        var faltas = 5;
+        var nota1, nota2, media_aluno, faltas_aluno;
+
+        nota1 = Number(prompt("digite sua primeira nota"));
+        nota2 = parseFloat(prompt("digite sua segunda nota"));
+        faltas_aluno = parseInt(prompt("digite a quantidade de faltas do aluno"));
+        
+        media_aluno = (nota1 + nota2)/2
+
+        console.log("Sua media foi "+ media_aluno.toFixed(1))
+
+        if((media_aluno >= media) && (faltas_aluno <= faltas)){
+            resultado = true;
+
+        }else{
+            resultado = false;
+        }
+
+            console.log("Sua media foi : " + media_aluno)
+
+            console.log(" E o aluno foi " + ((resultado) ? "Aprovado" : "Reprovado"))
+        
+
+        // operador ternario
+
+        /*var teste = (true) ? "Verdadeiro" : "Falso";
+        console.log(teste);*/
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

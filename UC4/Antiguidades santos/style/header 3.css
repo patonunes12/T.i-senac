@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+/* ==================================
+     Paleta de cores:
+     - Turquesa Escuro: #008B8B
+     - Laranja Apagado: #D27D2D
+     - Preto: #000000
+     - Bege: #F5F5DC
+
+     Títulos:
+          font-family: "Playfair Display", serif;
+
+     Corpo/Texto normal:
+          font-family: "Lato", sans-serif;     
+================================== */
+body {
+     font-family: "Lato", sans-serif;
+}
+
+.cabecalho {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 90px;
+     padding: 0 30px;
+     background-color: #008B8B;
+}
+
+/* =============================================
+     Logo
+============================================= */
+.logo h1 {
+     font-family: "Playfair Display", serif;
+     color: #F5F5DC;
+}
+
+.logo img {
+     display: flex;
+     justify-content: center;
+     width: 150px;
+     margin-bottom: 8px;
+}
+/* =============================================
+     Menu / Links
+============================================= */
+.menu ul {
+     display: flex;
+     gap: 25px;
+     list-style: none;
+}
+
+.menu a {
+     text-decoration: none;
+     color: #F5F5DC;
+     font-weight: bold;
+     transition: 0.3s;
+}
+
+.menu img {
+     display: none;
+}
+
+.menu a:hover {
+     color: #D27D2D;
+     /*border-bottom: 2px solid #D27D2D;*/
+}
+
+/* =============================================
+     Barra de pesquisa
+============================================= */
+.barra-pesquisa input {
+
+     width: 200px;
+     padding: 10px;
+     border: none;
+     border-radius: 25px;
+}
+
+/* =============================================
+     Media Query: Tablet
+============================================= */
+@media (max-width: 768px){
+     .cabecalho {
+          flex-wrap: wrap;
+          height: auto;
+          padding: 20px;
+          gap: 20px;
+     }
+
+     .logo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+     
+     .logo img {
+          max-width: 100%;
+          width: 60%;
+     }
+
+     .menu {
+          width: 100%;
+     }
+
+     .menu ul {
+          justify-content: center;
+          flex-wrap: wrap;
+     }
+
+     .barra-pesquisa {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+     }
+
+     .barra-pesquisa input {
+          width: 80%;
+     }
+}
+
+/* =============================================
+     Media Query: Celular
+============================================= */
+@media (max-width: 600px) {
+     .cabecalho {
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .logo {
+          display: flex;
+          justify-content: center;
+     }
+     
+     .menu {
+          order: 2;
+          width: 100%;
+     }
+
+     .menu img {
+          display: flex;
+          width: 50px;
+          height: 40px;
+     }
+
+     .barra-pesquisa {
+          order: 3;
+          width: 100%;
+          max-width: 400px;
+          display: flex;
+          justify-content: center;
+     }
+
+     .menu ul {
+          
+          align-items: center;
+          gap: 15px;
+     }
+
+     .logo h1 {
+          font-size: 1.8rem;
+     }
+}
+

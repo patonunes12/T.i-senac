@@ -1,0 +1,14 @@
+var compra = prompt("Qual o valor da compra")
+var desc1 = prompt("Qual o nome do cupom de desconto")
+
+if(desc1 == "BLACKFRIDAY"){
+    result = "Cupom valido desconte de R$50"
+
+}else if(desc1 == "BEMVINDO"){
+    result = "Cupom valido desconte de R$50"
+        
+}else{
+    result = "Cupom invalido"
+}
+
+console.log("O valor da compra foi de " + compra + " e " + result )

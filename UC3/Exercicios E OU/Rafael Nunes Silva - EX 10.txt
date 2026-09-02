@@ -1,0 +1,33 @@
+var pag = prompt("Qual a forma de pagamento ?")
+var result, final, total
+
+if(pag == "dinheiro" || pag == "Dinheiro"){
+   total = "Não tem como parcelar"
+
+}else if(pag == "Cartão" || pag == "cartão"){
+   result = prompt("Digite o nome da bandeira do cartão Visa ou Loja ?")
+
+
+   if(result == "Loja" || "loja" ){
+      final = prompt("Vai querer parcelar ? S se sim N se não")
+
+   }else if(result == "Visa" || "visa"){
+      final = prompt("Vai querer parcelar ? S se sim N se não")
+   }
+
+   if(final == "S" && result == "Loja"){
+      total = "Podemos parcelar até 12x sem juros"
+
+   }else if(final == "S" && result == "Visa"){
+      total = "Podemons parcelar até em 6x"
+
+   }else{
+      total = "O valor da compra foi de $$$$"
+
+   }
+
+}else{
+   total = "Não aceitamos esse método de pagamento"
+}
+
+console.log(total)

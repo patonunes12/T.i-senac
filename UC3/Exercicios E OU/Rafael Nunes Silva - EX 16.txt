@@ -1,0 +1,14 @@
+var hora =prompt("Que horas você quer que a entrega seja feita ? digite apenas numero")
+
+if(hora > 8 && hora <= 12 || (hora > 13 && hora <= 18)){
+    result = "Entraga valida"
+
+}else if(hora <= 8 && hora > 12 || (hora <= 13 && hora > 18)){
+    result = alert("Entrega invalida. Nosso horario de funcionamento é das 8h a 12h e 13h a 18h")
+
+}else{
+    result = alert("Entrega invalida. Nosso horario de funcionamento é das 8h a 12h e 13h a 18h")
+
+}
+
+console.log(result)

@@ -1,0 +1,11 @@
+var uso = prompt("Você aceita Termos de Uso (S ou N)")
+var pv = prompt("Você aceita as Políticas de Privacidade (S ou N)")
+
+if(uso == "S" && pv == "S"){
+     result = alert("Cadastro finalizado com sucesso")
+        
+}else{
+     result = alert("Cadastro recusado")
+}
+
+console.log(result)

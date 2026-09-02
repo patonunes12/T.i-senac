@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2A0845; 
+    color: #FFFFFF; 
+    font-family: 'Inter', sans-serif; 
+    margin: 0px;
+    padding: 0px;
+}
+ 
+h1, h2, h3 {
+    font-family: 'Anton', sans-serif;
+    color: #FFD700; 
+    text-align: center;
+}
+ 
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 69, 0, 0.4); 
+    padding: 15px;
+    text-align: center; 
+}
+ 
+.menu-navegacao ul {
+    list-style: none;
+    padding: 0px;
+    margin: 10px 0px 0px 0px;
+}
+ 
+
+.menu-navegacao li {
+    display: inline;
+    margin: 0px 15px; 
+}
+ 
+.menu-navegacao a {
+    color: #FFFFFF;
+    text-decoration: none; 
+    font-weight: bold;
+}
+ 
+
+.menu-navegacao a:hover {
+    color: #FF1493; 
+}
+ 
+ 
+/* ========================================================
+ DESTAQUE
+   ======================================================== */
+ 
+.destaque {
+    text-align: center;
+    padding: 50px 20px;
+}
+ 
+.img-destaque {
+    width: 100%;
+    max-width: 600px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+ 
+
+.botao-compra {
+    margin-top: 20px;
+    background-color: #FF1493; 
+    color: #FFFFFF;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; 
+    border-radius: 5px; 
+}
+
+
+ .voltar{
+    margin-top: 20px;
+    background-color: #FF1493; 
+    color: #FFFFFF;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; 
+    border-radius: 5px; 
+
+}
+ 
+ 
+/* ========================================================
+    ARTISTAS E COLUNAS
+   ======================================================== */
+ 
+.line-up {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-artistas {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    max-width: 900px;
+}
+
+.artista {
+    background-color: #3b115c;
+    padding: 30px;
+    flex: 1;
+    min-width: 200px;
+    border: 3px solid #FF4500; 
+    border-radius: 10px;
+
+}
+
+.img-galeria{
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+ 
+ 
+/* ========================================================
+    INFORMAÇÕES ÚTEIS
+   ======================================================== */
+ 
+.infos-uteis {
+    text-align: center;
+    padding: 40px 20px;
+}
+ 
+.container-infos {
+    margin-left:78px;
+    display: flex;
+    justify-content: space-evenly; 
+    gap: 20px;
+}
+ 
+.caixa-info {
+    background-color: #FFD700;
+    padding: 20px;
+    width: 250px;
+}
+
+.caixa-info2 {
+    background-color: #3b115c;
+    padding: 20px;
+    width: 250px;
+    margin-right: 70px;
+    margin-top: 20px;
+}
+ 
+.icone2{
+    width:200px ;
+    height:200px;
+    margin-bottom: 40px;
+}
+
+.icone {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 20px;
+}
+
+.icone3{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+ a{
+    text-decoration: none;   
+}
+
+.caixa-infos   a{
+    color:#FFFFFF;
+}
+
+.caixa-infos a:hover {
+    color: #FF1493;
+}
+
+
+
+ 
+ 
+/* ================================
+                RODAPÉ
+   ============================== */
+ 
+.rodape {
+    background-color: #1a032e; 
+    text-align: center;
+    
+    margin-top: 60px;
+}
+
+.rodape2{
+    margin-bottom: 80px;
+    background-color: #1a032e; 
+    text-align: center;
+    margin-top: 60px;
+    padding: 80px;
+}
+ 
+
+.redes-sociais {
+    margin-bottom: 15px;
+}
+ 
+.icone-rede {
+    width: 32px;
+    height: 32px;
+    margin: 0px 10px;
+}
+ 
+
+.icone-engrenagem {
+    width: 30px;
+    height: 30px;
+    opacity: 0.15; 
+    text-decoration: none;
+}
+ 
+
+
+ 
+ 
+/* ======================================
+        AJUSTE PARA CELULAR
+   ====================================== */
+ 
+
+@media (max-width: 768px) {
+
+    h1,h2,h3{
+        text-align: center;
+    }
+
+    p{
+        text-align: center;
+    }
+
+
+    .colunas-artistas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .artistas{
+        width: 100%;
+        max-width: 280px;
+        
+    }
+
+    
+    .container-infos {
+        flex-direction: column; 
+        align-items: center;
+    }
+}

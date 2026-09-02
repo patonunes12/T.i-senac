@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+    <script>
+        
+        let replay;
+
+        do {
+            let numeroCerto = 7; 
+            let palpite;
+            let desistiu = false;
+            
+            while (palpite !== numeroCerto) {
+                let entradaJogo = prompt("Exercício 6 - Tente adivinhar o número de 1 a 10:");
+                
+                if (entradaJogo === null) {
+                    desistiu = true;
+                    break;
+                }
+                
+                palpite = parseInt(entradaJogo);
+                
+                if (isNaN(palpite)) {
+                    console.log("Isso não é um número! Tente novamente.");
+                } else if (palpite !== numeroCerto) {
+                    console.log("Palpite " + palpite + " está errado.");
+                }
+            }
+            
+            if (desistiu) {
+                console.log("Usuário desistiu do jogo da adivinhação.");
+            } else {
+                console.log("Parabéns! Você acertou o número correto: " + numeroCerto);
+            }
+            
+            let entradaReplay = prompt("Deseja jogar de novo?\n1 - Sim\nQualquer outra tecla - Não");
+            replay = parseInt(entradaReplay);
+
+        } while (replay === 1);
+        console.log("Jogo encerrado permanentemente.");
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

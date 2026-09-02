@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+    <script>
+        
+        let qtd;
+
+        do {
+            let entradaQtd = prompt("Exercício 5 - Quantos números quer somar? (Maior que 0)");
+            if (entradaQtd === null) {
+                qtd = 0;
+                break;
+            }
+            qtd = parseInt(entradaQtd);
+        } while (isNaN(qtd) || qtd <= 0);
+
+        if (qtd === 0) {
+            console.log("Somador dinâmico cancelado.");
+        } else {
+            let totalDinamico = 0;
+            for (let i = 1; i <= qtd; i++) {
+                let entradaNum = prompt("Digite o número " + i + " de " + qtd + ":");
+                let numero = parseFloat(entradaNum);
+                
+                if (isNaN(numero)) {
+                    console.log("Valor inválido pulado. Somado como 0.");
+                    numero = 0;
+                }
+                totalDinamico = totalDinamico + numero;
+            }
+            console.log("Soma total acumulada: " + totalDinamico);
+        }
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

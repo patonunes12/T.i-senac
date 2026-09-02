@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+    <script>
+        
+        
+        let numFatorial;
+        let cancelouEx7 = false;
+
+        while (true) {
+            let entradaFat = prompt("Exercício 7 - Digite um número inteiro positivo para o fatorial:");
+            
+            if (entradaFat === null) {
+                cancelouEx7 = true;
+                break;
+            }
+            
+            numFatorial = parseInt(entradaFat);
+            
+            if (!isNaN(numFatorial) && numFatorial >= 0) {
+                break;
+            }
+            console.log("Entrada inválida. Digite um número inteiro maior ou igual a 0.");
+        }
+
+        if (cancelouEx7) {
+            console.log("Cálculo do fatorial cancelado.");
+        } else {
+            let fatorial = 1;
+            for (let i = 1; i <= numFatorial; i++) {
+                fatorial = fatorial * i;
+            }
+            console.log("O resultado do fatorial de " + numFatorial + " é: " + fatorial);
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

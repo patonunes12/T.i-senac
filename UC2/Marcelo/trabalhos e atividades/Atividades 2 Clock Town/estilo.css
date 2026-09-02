@@ -1,0 +1,216 @@
+/* ====================================================
+   RESET BÁSICO E CONFIGURAÇÕES GERAIS
+==================================================== */
+* {
+    /* 1. Zere a margem e o padding padrão do navegador */
+    margin: none;
+    padding: none;
+    
+    
+    /* 2. Adicione a propriedade para que o padding não altere a largura final da caixa */
+    
+}
+
+body {
+    /* Configure a fonte, altura da linha, cor de fundo e cor do texto */
+    background-color:#1C0F24;
+    color: #f3ce7b;
+    
+}
+/* CLASSE AUXILIAR: O "Limpa Trilhos" */
+.limpa-flutuacao {
+    /* 3. Qual propriedade usamos para não deixar os elementos subirem 
+          e engolirem os elementos flutuantes? */
+    clear: both;
+}
+
+/* ====================================================
+   CABEÇALHO
+==================================================== */
+#cabecalho-principal {
+    /* Adicione uma cor de fundo escura, texto branco e padding (espaçamento interno) */
+    background-color:  #62357e ;
+    padding:2px;
+
+    
+}
+
+/* Logotipo */
+#cabecalho-principal .logotipo {
+    /* 4. Faça o logotipo flutuar para a ESQUERDA e ocupe 30% da largura */
+    font-size:20px;
+    font-family: "Charlemagne Condensed"; 
+    text-shadow: 2px 2px 5px #1C0F24   ;
+    width: 30%; 
+    margin-left: 50px;
+    color: #f2cc73;
+    float: left;
+    
+}
+
+#cabecalho-principal .logotipo h2{
+    float: right;
+    margin-top: 50px;
+    margin-right:100px;
+    
+
+
+
+}
+
+/* Menu de navegação */
+#cabecalho-principal .menu-navegacao {
+    /* 5. Faça o menu flutuar para a DIREITA, ocupando 60% da largura, 
+          com texto alinhado à direita */
+    float: right;
+    height: 60%;
+    margin-top: 30.90px;
+
+}
+
+.menu-navegacao ul {
+    /* Remova as bolinhas (marcadores) da lista */
+    list-style: none;
+    margin: 20px;
+    float: right;
+}
+
+.menu-navegacao ul li {
+    /* Coloque os itens da lista um ao lado do outro e adicione uma margem à esquerda */
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+.menu-navegacao ul li a {
+    /* Mude a cor do texto para branco, tire o sublinhado e deixe em negrito */
+    color: #2E7D32 ;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ====================================================
+   ÁREA PRINCIPAL - DESTAQUE (HERO SECTION)
+==================================================== */
+#destaque {
+    /* 6. Adicione uma cor de fundo azul, texto branco, alinhe o texto ao centro
+          e coloque um espaçamento interno (padding) de 80px em cima/baixo */
+   background-color: #215824;
+   text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+    
+}
+
+#destaque .botao-acao{
+    display: inline-block;
+     background-color: #f3ce7b;
+    color: #162425; 
+    border-color:black ;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight:bolder;
+    width: 200px;
+    height: 20px;
+    margin-top: 20px;
+    margin-right:50px ;
+
+    padding: 20px;
+}
+
+/* ====================================================
+   SEÇÃO DE GALERIA - FOTOS E TEXTOS
+==================================================== */
+#galeria {
+    /* Defina a largura (ex: 90%), limite a largura máxima e centralize na tela */
+    width: 90%;
+    margin-left: 70px;
+    text-align: center;
+}
+
+.item-galeria {
+    /* 7. Faça os itens da galeria flutuarem para a esquerda.
+          Use a mesma lógica de largura e margem que usaremos nos cartões abaixo (ex: 31%). */
+    float: left;
+    margin-left:210px ;
+    padding-left: 80px;
+    text-align: center;
+   border-radius: 8px;
+   width: 200px;
+   background-color: #f3ce7b;
+   padding: 40px;
+   color: #1C0F24;
+
+    
+    /* Centralize o texto, fundo branco, padding, bordas arredondadas. 
+       Dica: Use 'overflow: hidden' para a imagem não vazar pelas bordas */
+}
+
+.item-galeria img {
+    /* 8. Faça a imagem ocupar 100% da largura do seu elemento pai e defina uma altura automática (auto) */ 
+    margin-top: auto;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+
+    /* Adicione uma margem inferior para separar a imagem do texto */
+}
+
+/* ====================================================
+   SEÇÃO COM 3 COLUNAS - O DESAFIO DO FLOAT
+==================================================== */
+#sobre {
+    /* Defina a largura (ex: 90%) e o limite de largura máxima */
+    width: 90%;
+    margin-left: 70px;
+    text-align: center;
+    margin-top: 75px;
+    /* 9. Centralize esta seção na tela usando margin */
+    
+}
+
+.titulo-secao {
+    /* Centralize o texto e adicione uma margem inferior */
+    margin-bottom: 75px;
+}
+
+/* OS 3 CARTÕES */
+.cartao-info {
+    /* 10. Faça os cartões flutuarem para a esquerda. 
+          Dê uma largura de 31% para cada um.
+          Dê uma margem esquerda e direita para separá-los (ex: 1.16%) */
+    float: left;
+    margin-left:15px ;
+    padding-left: 34px;
+    text-align: center;
+    width: 28%;
+    height: 520px;
+    background-color: #f3ce7b;
+    padding: 2%;
+    color: #1C0F24;
+    border-radius: 8px;
+    
+    /* Adicione cor de fundo branca, padding, centralize o texto e coloque uma borda fina */
+}
+
+.cartao-info img{
+    /* 11. Estilize os ícones ajustando a largura e altura para 120px. 
+           Dica de ouro: Use border-radius: 50% para deixá-los perfeitamente redondos! */
+        width: 200px;
+        height: 200px;
+       
+}
+
+/* ====================================================
+   RODAPÉ
+==================================================== */
+#rodape {
+    /* 12. Estilize o rodapé com cor de fundo escura, texto claro e centralizado */
+    background-color: #62357e;
+    padding: 30px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+}

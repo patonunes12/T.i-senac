@@ -1,0 +1,18 @@
+var valor = prompt("Qual foi o valor gasto no ultimo mês em nosso site ?")
+var ano = prompt("Quanto tempo você é cadastrado no nosso site ?")
+
+if(valor >= 500 && ano > 1 ){
+    result = "Acesso Área VIP liberado"
+
+}else if( valor <= 500 && ano > 1){
+    result = alert("Acesso a Área VIP restringido")
+
+}else if( valor >= 500 && ano  <=1){
+    result = alert("Acesso a Área VIP restringido")
+
+}else if( valor <= 500 && ano <= 1){
+    result = alert("Acesso a Área VIP restringido"
+
+}
+        
+console.log(result)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+    <script>
+       
+        let degraus;
+        let cancelouEx10 = false;
+
+        while (true) {
+            let entradaDegraus = prompt("Exercício 10 - Digite a quantidade de degraus da escada (1 a 10):");
+            
+            if (entradaDegraus === null) {
+                cancelouEx10 = true;
+                break;
+            }
+            
+            degraus = parseInt(entradaDegraus);
+            
+            if (!isNaN(degraus) && degraus >= 1 && degraus <= 10) {
+                break;
+            }
+            console.log("Entrada incorreta. Escolha apenas números entre 1 e 10.");
+        }
+
+        if (cancelouEx10) {
+            console.log("Construção da escadinha cancelada.");
+        } else {
+            console.log("Imprimindo escada de asteriscos:");
+            let escada = "";
+            for (let i = 1; i <= degraus; i++) {
+                escada = escada + "*"; 
+                console.log(escada);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

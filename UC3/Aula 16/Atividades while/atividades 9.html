@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+    <script>
+        
+        let maiores = 0;
+        let cancelouEx9 = false;
+
+        for (let i = 1; i <= 5; i++) {
+            let idade;
+            while (true) {
+                let entradaIdade = prompt("Exercício 9 - Digite a idade do aluno " + i + " (0 a 120):");
+                
+                if (entradaIdade === null) {
+                    cancelouEx9 = true;
+                    break;
+                }
+                
+                idade = parseInt(entradaIdade);
+                
+                if (!isNaN(idade) && idade >= 0 && idade <= 120) {
+                    break;
+                }
+                console.log("Idade inválida informada. Digite valores entre 0 e 120.");
+            }
+            
+            if (cancelouEx9) {
+                break;
+            }
+            
+            if (idade >= 18) {
+                maiores = maiores + 1;
+            }
+        }
+
+        if (cancelouEx9) {
+            console.log("Cadastro da turma interrompido.");
+        } else {
+            console.log("Total de alunos maiores de idade cadastrados: " + maiores);
+        }
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

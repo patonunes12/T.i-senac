@@ -1,0 +1,11 @@
+var renda = Number(prompt("Qual a sua renda mensal ?"))
+var spc = prompt("Voce tem divida ativas no serasa ? S se sim e N se não")
+
+if(renda > 2500 && spc == "N"){
+     result = ("aprovado")
+
+}else{
+     result = ("reprovado")
+}
+
+console.log("O seu crediario foi " + result)

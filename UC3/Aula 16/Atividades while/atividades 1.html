@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script>
+
+        
+        let tentativas = 0;
+        let logado = false;
+
+        while (tentativas < 3) {
+            let senha = prompt("Exercício 1 - Digite a senha:");
+            
+            if (senha === null || senha === "") {
+                console.log("Acesso cancelado ou campo vazio.");
+                break;
+            }
+            
+            if (senha === "1234") {
+                logado = true;
+                break;
+            }
+            
+            tentativas = tentativas + 1;
+            console.log("Senha incorreta. Tentativa " + tentativas + " de 3.");
+        }
+
+        if (logado) {
+            for (let i = 0; i < 5; i++) {
+                console.log("Bem-vindo ao sistema!");
+            }
+        } else {
+            console.log("Fim das tentativas. Acesso bloqueado.");
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

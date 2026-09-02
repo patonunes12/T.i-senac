@@ -1,0 +1,33 @@
+15 Funcionais
+=================
+
+01 (Cadastrar Pessoas e pets): O usuário preenche uma ficha com o nome, telefone e endereço de clientes, funcionários ou fornecedores e clica em salvar.
+02 (Logins de pessoas e Cameras): login fixo é login temporário de camera
+03 (Histórico Médico): O veterinário digita na tela o peso do animal, o que ele está sentindo, o remédio que passou e clica em gravar.
+04 (Cadastrar Produtos): O usuário digita o nome da ração ou brinquedo, coloca o preço de venda e clica em salvar no sistema.
+05 (Fazer uma Venda): O funcionário escolhe os produtos na tela, digita um desconto se precisar, escolhe se o pagamento é em Pix ou cartão e encerra a venda.
+06 (Marcar Banho e Tosa): O usuário clica em um horário livre no calendário da tela, escolhe o pet e confirma o agendamento.
+07 (Finalizar Banho e Tosa): O banhista clica em um botão para avisar que terminou o serviço e escreve se usou algum shampoo especial.
+08 (Fechar o Caixa): No fim do dia, o funcionário conta o dinheiro da gaveta, digita o valor total na tela e clica no botão de fechar.
+09 (Contas a Pagar e Receber): O usuário digita o valor de uma conta de luz ou água, escolhe a data do vencimento e clica em salvar.
+10 (Ver Relatórios): O dono da empresa escolhe o mês que quer ver na tela e clica em um botão para ver o gráfico de quanto faturou.
+11 (Busca Rápida): O usuário digita o nome de um cliente em uma barra de pesquisa para ver na hora o telefone dele e as últimas compras.
+12 (Enviar Promoções): O usuário escreve uma mensagem de texto na tela e clica em um botão para enviar para todos os clientes cadastrados.
+13 (Registrar Reclamações): O atendente abre uma tela e digita uma reclamação ou sugestão que um cliente fez na recepção.
+14 (Atualizar Estoque): O funcionário conta os produtos na prateleira, digita a quantidade certa na tela e clica em atualizar.
+15 (Imprimir Recibo): O funcionário clica em um botão na tela de vendas antigas para imprimir uma segunda via do comprovante para o cliente.
+
+
+10 Requisitos Não Funcionais
+=============================
+
+01: Proteção de Senhas O sistema embaralha e esconde as senhas de um jeito que ninguém consegue descobrir, nem mesmo os donos do sistema.
+02: Cópia de Segurança O sistema salva uma cópia de todas as informações automaticamente toda madrugada e guarda isso na internet por 3 meses.
+03: Lei de Dados O sistema esconde nomes e documentos das pessoas em relatórios internos para obedecer às regras da lei de privacidade.
+04: Organização do Banco O sistema amarra as informações para que nada fique solto e garante que uma venda só salve se tudo der 100% certo.
+05: Volta Rápida Se o sistema quebrar ou cair por completo, os técnicos conseguem fazer ele voltar a funcionar em no máximo 2 horas.
+06: Melhorias sem Pausa Os programadores conseguem colocar novas funções no sistema sem precisar tirar ele do ar e sem apagar nada.
+07: Testes no Código Os programadores usam ferramentas automáticas para testar e garantir que o código do sistema foi bem escrito e sem erros.
+08: Sistema Sempre no Ar O sistema fica espalhado em vários computadores da internet para garantir que ele quase nunca fique fora do ar.
+09: Muitas Pessoas Juntas O sistema é preparado por dentro para aguentar mais de 1.000 pessoas mexendo ou acessando ao mesmo tempo.
+10: Rapidez Interna O sistema faz as tarefas mais pesadas em segundo plano para não travar a tela e responde em menos de um piscar de olhos.

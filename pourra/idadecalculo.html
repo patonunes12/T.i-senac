@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calculadora idade</title>
+</head>
+<body>
+
+    <section>
+        <div>
+            <h1>Em que ano você nasceu ?</h1>
+            <p>
+                <input type="number" id="ano" class="ano" min="1800" max="2026">
+            </p>
+
+            <p>
+                Sexo:
+                <input type="radio" name="sexo" id="femi" checked>
+                <label for="femi">Feminino</label>
+
+                <input type="radio" name="sexo" id="mascu">
+                <label for="mascu">Masculino</label>
+
+                <button id="botao" onclick="testar()">Verificar</button>
+            </p>
+        </div>
+        <div>
+            <img id="foto" src="./imagem/bebêmenino.jpg" alt="bebemenino">
+            <p id="textos"></p>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

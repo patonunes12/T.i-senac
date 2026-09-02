@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caixas</title>
+    <title>Relógio Sincronizado</title>
+    <style>
+        /* Configuração geral para centralizar tudo na tela */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a; /* Fundo escuro moderno */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Caixa principal que guarda os elementos */
+        .container {
+            text-align: center;
+            background-color: #2d2d2d;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Estilo da imagem dinâmica */
+        #sua-imagem {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Deixa a imagem redonda */
+            object-fit: cover;
+            border: 3px solid #00adb5; /* Borda decorativa azul */
+            margin-bottom: 20px;
+            transition: all 0.5s ease; /* Transição suave ao mudar de imagem */
+        }
+
+        /* Estilo do texto explicativo */
+        #seu-texto-resposta {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            min-height: 50px; /* Evita que o layout pule quando o texto mudar */
+        }
+
+        /* Estilo do botão interativo */
+        #seu-botao {
+            background-color: #00adb5;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        /* Efeito de passar o mouse no botão */
+        #seu-botao:hover {
+            background-color: #007c82;
+        }
+
+        #seu-botao:active {
+            transform: scale(0.95);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <img id="sua-imagem" src="" alt="Status do Horário">
+
+        <p id="seu-texto-resposta">Clique no botão abaixo para verificar o horário.</p>
+
+        <button id="seu-botao" type="button">Que horas são?</button>
+
+    </div>
+
+    
+    
+    <script>
+        
+        function formatarDigito(numero) {
+            return String(numero).padStart(2, '0');
+        }
+
+       
+        
+        function controlarImagemPorHorario() {
+            const agora = new Date();
+            const imagemElemento = document.getElementById('sua-imagem');
+            
+            
+            if (agora.getHours() >= 18) {
+                img.src = 'caminho-da-imagem-noite.jpg';
+            } else {
+                img.src = 'caminho-da-imagem-dia.jpg';
+            }
+        }
+
+        
+        const botao = document.getElementById('seu-botao');
+
+        botao.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            
+            
+            const agoraNoClique = new Date();
+            const horas = formatarDigito(agoraNoClique.getHours());
+            const minutos = formatarDigito(agoraNoClique.getMinutes());
+            const segundos = formatarDigito(agoraNoClique.getSeconds());
+            
+            const horaFormatada = `${horas}:${minutos}:${segundos}`;
+            
+            if(hora >0 && hora <5 ){
+                const mensagem = `Boa madrugada vagabundo ${horaFormatada}.`;
+                
+            }else if(hora >=6 && hora <12){
+                const mensagem = `Bom dia ${horaFormatada}.`;
+                
+
+            }else if(hora >=12 && hora <18){
+                const mensagem = `Boa tarde ${horaFormatada}.`;
+                
+
+            }else{
+                const mensagem = `Boa noite ${horaFormatada}.`;
+                
+            }
+
+             document.getElementById('seu-texto-resposta').textContent = mensagem;
+
+            
+        });
+
+        
+        controlarImagemPorHorario();
+        
+        setInterval(controlarImagemPorHorario, 10000000);
+ 
+
+    </script>
+
+</body>
+</html>
