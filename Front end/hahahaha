@@ -1,0 +1,174 @@
+
+// ==========================================
+// 1. Acesso e Boas-Vindas
+// ==========================================
+console.log("--- Exercício 1 ---");
+let tentativas = 0;
+
+while (tentativas < 3) {
+    let senha = prompt("Exercício 1 - Digite a senha:");
+    if (senha === "1234") {
+        for (let i = 0; i < 5; i++) {
+            console.log("Bem-vindo ao sistema!");
+        }
+        break; // Para o while se acertar
+    }
+    tentativas++;
+}
+
+// ==========================================
+// 2. Validador de Notas de um Aluno
+// ==========================================
+console.log("--- Exercício 2 ---");
+let somaNotas = 0;
+
+for (let i = 1; i <= 4; i++) {
+    let nota;
+    do {
+        nota = parseFloat(prompt(`Exercício 2 - Digite a nota ${i} (0 a 10):`));
+    } while (nota < 0 || nota > 10); // Repete se for inválida
+    
+    somaNotas = somaNotas + nota;
+}
+console.log("Média final: " + (somaNotas / 4));
+
+// ==========================================
+// 3. Menu Interativo
+// ==========================================
+console.log("--- Exercício 3 ---");
+let opcao;
+
+do {
+    opcao = prompt("Exercício 3 - Menu:\n1 - Mostrar Tabuada\n2 - Contagem\n0 - Sair");
+    
+    if (opcao === "1") {
+        for (let i = 1; i <= 10; i++) {
+            console.log("5 x " + i + " = " + (5 * i)); // Tabuada fixa do 5 para simplificar
+        }
+    }
+    if (opcao === "2") {
+        for (let i = 10; i >= 0; i--) {
+            console.log(i);
+        }
+    }
+} while (opcao !== "0");
+
+// ==========================================
+// 4. Caixa Eletrônico
+// ==========================================
+console.log("--- Exercício 4 ---");
+let saldo = 500;
+
+while (saldo >= 0) {
+    let saque = parseFloat(prompt("Saldo atual: R$" + saldo + "\nDigite o valor do saque (0 para sair):"));
+    
+    if (saque === 0) {
+        break; // Sai do laço
+    }
+    if (saque > saldo) {
+        console.log("Erro: Saque maior que o saldo!");
+    } else {
+        saldo = saldo - saque;
+        console.log("Saque de R$" + saque + " realizado. Saldo: R$" + saldo);
+    }
+}
+
+// ==========================================
+// 5. Somador Dinâmico
+// ==========================================
+console.log("--- Exercício 5 ---");
+let qtd;
+
+do {
+    qtd = parseInt(prompt("Exercício 5 - Quantos números quer somar? (Maior que 0)"));
+} while (qtd <= 0);
+
+let somaTotal = 0;
+for (let i = 1; i <= qtd; i++) {
+    let numero = parseFloat(prompt("Digite o número " + i + ":"));
+    somaTotal = somaTotal + numero;
+}
+console.log("Soma total: " + somaTotal);
+
+// ==========================================
+// 6. Jogo da Adivinhação com Replay
+// ==========================================
+console.log("--- Exercício 6 ---");
+let replay;
+
+do {
+    let numeroCerto = 7; // Número fixo para simplificar o teste
+    let palpite = 0;
+    
+    while (palpite !== numeroCerto) {
+        palpite = parseInt(prompt("Exercício 6 - Tente adivinhar o número (1 a 10):"));
+    }
+    console.log("Você acertou o número 7!");
+    
+    replay = parseInt(prompt("Deseja jogar de novo?\n1 - Sim\n2 - Não"));
+} while (replay === 1);
+
+// ==========================================
+// 7. Fatorial com Validação
+// ==========================================
+console.log("--- Exercício 7 ---");
+let numFatorial = -1;
+
+while (numFatorial < 0) {
+    numFatorial = parseInt(prompt("Exercício 7 - Digite um número positivo:"));
+}
+
+let fatorial = 1;
+for (let i = 1; i <= numFatorial; i++) {
+    fatorial = fatorial * i;
+}
+console.log("O fatorial de " + numFatorial + " é: " + fatorial);
+
+// ==========================================
+// 8. Múltiplas Tabuadas
+// ==========================================
+console.log("--- Exercício 8 ---");
+let tabuadaEscolhida;
+
+do {
+    tabuadaEscolhida = parseInt(prompt("Exercício 8 - Digite qual tabuada quer ver (0 para sair):"));
+    
+    if (tabuadaEscolhida !== 0) {
+        for (let i = 1; i <= 10; i++) {
+            console.log(tabuadaEscolhida + " x " + i + " = " + (tabuadaEscolhida * i));
+        }
+    }
+} while (tabuadaEscolhida !== 0);
+
+// ==========================================
+// 9. Estatísticas de uma Turma
+// ==========================================
+console.log("--- Exercício 9 ---");
+let maiores = 0;
+
+for (let i = 1; i <= 5; i++) {
+    let idade = -1;
+    while (idade < 0 || idade > 120) {
+        idade = parseInt(prompt("Exercício 9 - Digite a idade do aluno " + i + ":"));
+    }
+    if (idade >= 18) {
+        maiores = maiores + 1;
+    }
+}
+console.log("Total de alunos maiores de idade: " + maiores);
+
+// ==========================================
+// 10. Gerador de Escadinha
+// ==========================================
+console.log("--- Exercício 10 ---");
+let degraus = 0;
+
+while (degraus < 1 || degraus > 10) {
+    degraus = parseInt(prompt("Exercício 10 - Digite a quantidade de degraus (1 a 10):"));
+}
+
+let escada = "";
+for (let i = 1; i <= degraus; i++) {
+    escada = escada + "*"; // Adiciona um asterisco por linha
+    console.log(escada);
+}
