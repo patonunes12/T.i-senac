@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(113, 9, 182);
+    height: 1000px;
+
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    height: 300px;
+    width: 500px;
+    margin: 10px;
+}
+
+#botao-acao{
+   margin-top: 10px;
+}
+
+
