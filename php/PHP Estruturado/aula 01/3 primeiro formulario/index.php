@@ -15,7 +15,7 @@
         <input name="peso" id="peso" type="number" placeholder="ex: 69.5" step="0.10"></input>
 
 
-        .
+        
 
 
     
