@@ -1,0 +1,257 @@
+create database sistema_escolar;
+use sistema_escolar;
+
+create table cursos(
+    id_curso int auto_increment primary key,
+    nome varchar(100),
+    carga_horaria varchar(100) not null
+);
+
+create table alunos(
+    id_alunos int auto_increment primary key,
+    nome varchar(100) not null,
+    data_nascimento date,
+    email varchar(50) not null,
+    curso_preferido int,
+    foreign key (curso_preferido) references cursos(id_curso)
+);
+
+create table matriculas(
+    id_matriculas int auto_increment primary key,
+    id_alunos int,
+    id_curso int,
+    data_matriculas date,
+    foreign key (id_alunos) references alunos(id_alunos),
+    foreign key (id_curso) references cursos(id_curso)
+);
+
+insert into cursos (nome, carga_horaria) values
+('desenvolvimento web full stack', '240 horas'),
+('ciência de dados com python', '180 horas'),
+('design ux/ui', '120 horas'),
+('administração de banco de dados', '160 horas'),
+('cybersegurança básica', '100 horas'),
+('desenvolvimento de jogos digitais', '200 horas'),
+('marketing digital e seo', '80 horas'),
+('banco de dados sql', '220 horas'),
+('devops e infraestrutura em nuvem', '150 horas'),
+('gestão de projetos de ti', '90 horas'),
+('inteligência artificial', '280 horas');
+
+insert into alunos (nome, data_nascimento, email, curso_preferido) values
+('lucas silva', '1998-04-12', 'lucas.silva@email.com', 1),
+('mariana santos', '2001-08-25', 'mariana.santos@email.com', 2),
+('carlos eduardo', '1995-11-03', 'carlos.eduardo@email.com', 3),
+('beatriz costa', '2003-01-15', 'beatriz.costa@email.com', 4),
+('gabriel oliveira', '1999-06-30', 'gabriel.oliveira@email.com', 5),
+('fernanda lima', '2000-09-18', 'fernanda.lima@email.com', 6),
+('rafael souza', '1997-02-22', 'rafael.souza@email.com', 7),
+('camila rodrigues', '2002-12-05', 'camila.rodrigues@email.com', 8),
+('thiago pereira', '1994-07-14', 'thiago.pereira@email.com', 9),
+('juliana alves', '2004-03-09', 'juliana.alves@email.com', 10),
+('carlos silva', '2000-08-15', 'carlosdudu153@gmail.com', 11);
+
+insert into matriculas (id_alunos, id_curso, data_matriculas) values
+(1, 1, '2026-01-10'),
+(2, 2, '2026-01-12'),
+(3, 1, '2026-01-15'),
+(4, 3, '2026-02-01'),
+(5, 4, '2026-02-03'),
+(6, 8, '2026-02-10'),
+(7, 5, '2026-02-15'),
+(8, 6, '2026-03-01'),
+(9, 9, '2026-03-05'),
+(10, 10, '2026-03-10'),
+(11, 11, curdate());
+
+update cursos set carga_horaria='150 horas' where id_curso=8;
+update alunos set email='victorpromax@gmail.com' where id_alunos=7;
+update alunos set curso_preferido=2 where id_alunos=6;
+
+delete from matriculas where id_matriculas=4;
+delete from alunos where id_alunos=4;
+
+alter table alunos add telefones varchar(20);
+alter table cursos add nivel varchar(20);
+
+select nome, email from alunos;
+select nome, data_nascimento from alunos;
+select nome, carga_horaria from cursos;
+select * from cursos where carga_horaria > 200;
+select * from alunos where curso_preferido = 3;
+select * from alunos order by nome asc;
+select * from cursos order by carga_horaria desc;
+select * from matriculas limit 3;
+select * from alunos where data_nascimento between '1990-01-01' and '2000-12-31';
+select * from alunos where nome like 'm%';
+
+
+create database loja_online;
+use loja_online;
+
+create table clientes (
+    id_cliente int auto_increment primary key,
+    nome varchar(100),
+    email varchar(100)
+);
+
+create table pedidos (
+    id_pedido int auto_increment primary key,
+    id_cliente int,
+    data_pedido date,
+    foreign key (id_cliente) references clientes(id_cliente)
+);
+
+create table itenspedido (
+    id_itens int auto_increment primary key,
+    id_pedido int,
+    nome_produto varchar(100),
+    quantidade varchar(100),
+    preco_unitario decimal(10, 2) not null,
+    foreign key (id_pedido) references pedidos(id_pedido)
+);
+
+insert into clientes (nome, email) values
+('ana silva', 'ana.silva@email.com'),
+('bruno santos', 'bruno.santos@email.com'),
+('carla souza', 'carla.souza@email.com'),
+('daniel oliveira', 'daniel.oliveira@email.com'),
+('eduarda lima', 'eduarda.lima@email.com'),
+('felipe costa', 'felipe.costa@email.com'),
+('gabriela rocha', 'gabriela.rocha@email.com'),
+('henrique martins', 'henrique.martins@email.com'),
+('isabela fernandes', 'isabela.fernandes@email.com'),
+('joão pedro', 'joao.pedro@email.com'),
+('fernanda lima', 'fefelima164@gmail.com');
+
+insert into pedidos (id_cliente, data_pedido) values
+(1, '2026-03-01'),
+(2, '2026-03-02'),
+(3, '2026-03-03'),
+(4, '2026-03-04'),
+(5, '2026-03-05'),
+(6, '2026-03-06'),
+(7, '2026-03-07'),
+(8, '2026-03-08'),
+(9, '2026-03-09'),
+(10, '2026-03-10'),
+(11, curdate());
+
+insert into itenspedido (id_pedido, nome_produto, quantidade, preco_unitario) values
+(1, 'notebook', '1', '3500'),
+(2, 'mouse sem fio', '2', '80'),
+(3, 'teclado mecânico', '1', '250'),
+(4, 'monitor 24 polegadas', '1', '900'),
+(5, 'cadeira ergonômica', '1', '1200'),
+(6, 'fone de ouvido bluetooth', '2', '150'),
+(7, 'webcam full hd', '1', '200'),
+(8, 'mesa para escritório', '1', '450'),
+(9, 'suporte para notebook', '3', '60'),
+(10, 'hd externo 1tb', '1', '300'),
+(11, 'mouse gamer', '2', '120.00');
+
+update clientes set email='efacochuver85r@gmail.com' where id_cliente=7;
+update itenspedido set preco_unitario= preco_unitario * 1.10 where id_itens > 0;
+update itenspedido set quantidade=5 where id_itens=5;
+
+delete from itenspedido where id_itens=9;
+delete from pedidos where id_pedido=9;
+
+alter table clientes add telefone varchar(30);
+
+select nome, email from clientes;
+select id_pedido, data_pedido from pedidos;
+select nome_produto from itenspedido;
+select * from itenspedido where quantidade > 5;
+select nome_produto from itenspedido order by nome_produto asc;
+select * from itenspedido where preco_unitario > 100.00;
+select * from itenspedido limit 5;
+select * from itenspedido where preco_unitario between 50.00 and 200.00;
+select * from clientes where nome like 'a%';
+select * from itenspedido where nome_produto like '%gamer%';
+
+
+create database sistema_de_biblioteca;
+use sistema_de_biblioteca;
+
+create table autores(
+    id_autor int auto_increment primary key,
+    nome varchar(100)
+);
+
+create table livros(
+    id_livros int auto_increment primary key,
+    titulo varchar (100),
+    ano_publicacao date,
+    id_autor int,
+    foreign key (id_autor) references autores(id_autor)
+);
+
+create table emprestimos(
+    id_extrato int auto_increment primary key,
+    id_livros int,
+    nome_usuario varchar (100),
+    data_emprestimo date,
+    data_devolucao date,
+    foreign key (id_livros) references livros(id_livros)
+);
+
+insert into autores (nome) values
+('antoninho foguete'),
+('clarice lispector'),
+('george orwell'),
+('j.k. rowling'),
+('gabriel garcía márquez'),
+('j.r.r. tolkien'),
+('agatha christie'),
+('josé saramago'),
+('stephen king'),
+('virginia woolf'),
+('machado de assis');
+
+insert into livros (titulo, ano_publicacao, id_autor) values
+('viagem a lua em 2 hours', '1599-01-21', 1),
+('a hora da estrela', '1977-01-01', 2),
+('1984', '1949-01-01', 3),
+('harry potter e a pedra filosofal', '1997-01-01', 4),
+('cem anos de solidão', '1967-01-01', 5),
+('o senhor dos anéis', '1954-01-01', 6),
+('e não sobrou nenhum', '1939-01-01', 7),
+('ensaio sobre a cegueira', '1995-01-01', 8),
+('o iluminado', '1977-01-01', 9),
+('o faroeste', '1925-01-01', 10),
+('dom cassmurro', '1899-02-01', 11);
+
+insert into emprestimos (id_livros, nome_usuario, data_emprestimo, data_devolucao) values
+(1, 'lucas silva', '2026-03-01', '2026-03-15'),
+(2, 'mariana santos', '2026-03-02', '2026-03-16'),
+(3, 'carlos eduardo', '2026-03-03', '2026-03-17'),
+(4, 'beatriz costa', '2026-03-04', '2026-03-18'),
+(5, 'gabriel oliveira', '2026-03-05', '2026-03-19'),
+(6, 'fernanda lima', '2026-03-06', '2026-03-20'),
+(7, 'rafael souza', '2026-03-07', '2026-03-21'),
+(8, 'camila rodrigues', '2026-03-08', '2026-03-22'),
+(9, 'thiago pereira', '2026-03-09', '2026-03-23'),
+(10, 'juliana alves', '2026-03-10', '2026-03-24'),
+(11, 'lucas augusto', '2026-02-01', '2026-02-15');
+
+update livros set ano_publicacao='1800-01-03' where id_livros=5;
+update emprestimos set data_devolucao='2026-04-20' where id_extrato=9;
+update autores set nome='vitinho da silva' where id_autor=9;
+
+delete from emprestimos where id_extrato=10;
+delete from livros where id_livros=10;
+
+alter table livros add editora varchar(100);
+alter table autores add nacionalidade varchar(60);
+
+select * from autores;
+select nome from autores;
+select * from livros;
+select * from livros where ano_publicacao > '2015-12-31';
+select * from emprestimos;
+select * from emprestimos order by data_emprestimo asc;
+select * from livros order by titulo asc;
+select * from livros limit 5;
+select * from livros where ano_publicacao between '2000-01-01' and '2020-12-31';
+select * from autores where nome like 'p%';
