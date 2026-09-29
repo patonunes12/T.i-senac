@@ -1,0 +1,302 @@
+-- ============================================================================
+-- 1. SISTEMA ESCOLAR
+-- ============================================================================
+
+CREATE DATABASE Sistema_Escolar;
+USE Sistema_Escolar;
+
+CREATE TABLE Cursos(
+    id_curso INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    carga_horaria VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Alunos(
+    id_alunos INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE,
+    email VARCHAR(50) NOT NULL,
+    curso_preferido INT,
+    FOREIGN KEY (curso_preferido) REFERENCES Cursos(id_curso)
+);
+
+CREATE TABLE Matriculas(
+    id_matriculas INT AUTO_INCREMENT PRIMARY KEY,
+    id_alunos INT,
+    id_curso INT,
+    data_matriculas DATE,
+    FOREIGN KEY (id_alunos) REFERENCES Alunos(id_alunos),
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
+);
+
+INSERT INTO Cursos (nome, carga_horaria) VALUES
+('Desenvolvimento Web Full Stack', '240 horas'),
+('Ciência de Dados com Python', '180 horas'),
+('Design UX/UI', '120 horas'),
+('Administração de Banco de Dados', '160 horas'),
+('Cybersegurança Básica', '100 horas'),
+('Desenvolvimento de Jogos digitais', '200 horas'),
+('Marketing Digital e SEO', '80 horas'),
+('Banco de Dados SQL', '220 horas'),
+('DevOps e Infraestrutura em Nuvem', '150 horas'),
+('Gestão de Projetos de TI', '90 horas'),
+('Inteligência Artificial', '280 Horas');
+
+INSERT INTO Alunos (nome, data_nascimento, email, curso_preferido) VALUES
+('Lucas Silva', '1998-04-12', 'lucas.silva@email.com', 1),
+('Mariana Santos', '2001-08-25', 'mariana.santos@email.com', 2),
+('Carlos Eduardo', '1995-11-03', 'carlos.eduardo@email.com', 3),
+('Beatriz Costa', '2003-01-15', 'beatriz.costa@email.com', 4),
+('Gabriel Oliveira', '1999-06-30', 'gabriel.oliveira@email.com', 5),
+('Fernanda Lima', '2000-09-18', 'fernanda.lima@email.com', 6),
+('Rafael Souza', '1997-02-22', 'rafael.souza@email.com', 7),
+('Camila Rodrigues', '2002-12-05', 'camila.rodrigues@email.com', 8),
+('Thiago Pereira', '1994-07-14', 'thiago.pereira@email.com', 9),
+('Juliana Alves', '2004-03-09', 'juliana.alves@email.com', 10),
+('Carlos Silva', '2000-08-15', 'carlosdudu153@gmail.com', 11);
+
+INSERT INTO Matriculas (id_alunos, id_curso, data_matriculas) VALUES
+(1, 1, '2026-01-10'),
+(2, 2, '2026-01-12'),
+(3, 1, '2026-01-15'),
+(4, 3, '2026-02-01'),
+(5, 4, '2026-02-03'),
+(6, 8, '2026-02-10'),
+(7, 5, '2026-02-15'),
+(8, 6, '2026-03-01'),
+(9, 9, '2026-03-05'),
+(10, 10, '2026-03-10'),
+(11, 11, CURDATE());
+
+UPDATE Cursos SET carga_horaria='150 horas' WHERE id_curso=8;
+UPDATE Alunos SET email='victorpromax@gmail.com' WHERE id_alunos=7;
+UPDATE Alunos SET curso_preferido=2 WHERE id_alunos=6;
+
+DELETE FROM Matriculas WHERE id_matriculas=4;
+DELETE FROM Alunos WHERE id_alunos=4;
+
+ALTER TABLE Alunos ADD telefones VARCHAR(20);
+ALTER TABLE Cursos ADD nivel VARCHAR(20);
+
+-- RESOLUÇÃO DOS EXERCÍCIOS: SISTEMA ESCOLAR
+-- Ex 1:
+SELECT nome, email FROM Alunos;
+-- Ex 2:
+SELECT nome, data_nascimento FROM Alunos;
+-- Ex 3:
+SELECT nome, carga_horaria FROM Cursos;
+-- Ex 4:
+SELECT * FROM Cursos WHERE carga_horaria > 200;
+-- Ex 5:
+SELECT * FROM Alunos WHERE curso_preferido = 3;
+-- Ex 6:
+SELECT * FROM Alunos ORDER BY nome ASC;
+-- Ex 7:
+SELECT * FROM Cursos ORDER BY carga_horaria DESC;
+-- Ex 8:
+SELECT * FROM Matriculas LIMIT 3;
+-- Ex 9:
+SELECT * FROM Alunos WHERE data_nascimento BETWEEN '1990-01-01' AND '2000-12-31';
+-- Ex 10:
+SELECT * FROM Alunos WHERE nome LIKE 'M%';
+
+
+-- ============================================================================
+-- 2. LOJA ONLINE
+-- ============================================================================
+
+CREATE DATABASE Loja_Online;
+USE Loja_Online;
+
+CREATE TABLE Clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE Pedidos (
+    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    data_pedido DATE,
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
+);
+
+CREATE TABLE Itenspedido (
+    id_itens INT AUTO_INCREMENT PRIMARY KEY,
+    id_pedido INT,
+    nome_produto VARCHAR(100),
+    quantidade VARCHAR(100),
+    preco_unitario DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido)
+);
+
+INSERT INTO Clientes (nome, email) VALUES
+('Ana Silva', 'ana.silva@email.com'),
+('Bruno Santos', 'bruno.santos@email.com'),
+('Carla Souza', 'carla.souza@email.com'),
+('Daniel Oliveira', 'daniel.oliveira@email.com'),
+('Eduarda Lima', 'eduarda.lima@email.com'),
+('Felipe Costa', 'felipe.costa@email.com'),
+('Gabriela Rocha', 'gabriela.rocha@email.com'),
+('Henrique Martins', 'henrique.martins@email.com'),
+('Isabela Fernandes', 'isabela.fernandes@email.com'),
+('João Pedro', 'joao.pedro@email.com'),
+('Fernanda Lima', 'fefelima164@gmail.com');
+
+INSERT INTO Pedidos (id_cliente, data_pedido) VALUES
+(1, '2026-03-01'),
+(2, '2026-03-02'),
+(3, '2026-03-03'),
+(4, '2026-03-04'),
+(5, '2026-03-05'),
+(6, '2026-03-06'),
+(7, '2026-03-07'),
+(8, '2026-03-08'),
+(9, '2026-03-09'),
+(10, '2026-03-10'),
+(11, CURDATE());
+
+INSERT INTO Itenspedido (id_pedido, nome_produto, quantidade, preco_unitario) VALUES
+(1, 'Notebook', '1', '3500'),
+(2, 'Mouse Sem Fio', '2', '80'),
+(3, 'Teclado Mecânico', '1', '250'),
+(4, 'Monitor 24 polegadas', '1', '900'),
+(5, 'Cadeira Ergonômica', '1', '1200'),
+(6, 'Fone de Ouvido Bluetooth', '2', '150'),
+(7, 'Webcam Full HD', '1', '200'),
+(8, 'Mesa para Escritório', '1', '450'),
+(9, 'Suporte para Notebook', '3', '60'),
+(10, 'HD Externo 1TB', '1', '300'),
+(11, 'Mouse gamer', '2', '120.00');
+
+UPDATE Clientes SET email='Efacochuver85r@gmail.com' WHERE id_cliente=7;
+UPDATE Itenspedido SET preco_unitario= preco_unitario * 1.10 WHERE id_itens > 0;
+UPDATE Itenspedido SET quantidade=5 WHERE id_itens=5;
+
+DELETE FROM Itenspedido WHERE id_itens=9;
+DELETE FROM Pedidos WHERE id_pedido=9;
+
+ALTER TABLE Clientes ADD telefone VARCHAR(30);
+
+-- RESOLUÇÃO DOS EXERCÍCIOS: LOJA ONLINE
+-- Ex 1:
+SELECT nome, email FROM Clientes;
+-- Ex 2:
+SELECT id_pedido, data_pedido FROM Pedidos;
+-- Ex 3:
+SELECT nome_produto FROM Itenspedido;
+-- Ex 4:
+SELECT * FROM Itenspedido WHERE quantidade > 5;
+-- Ex 5:
+SELECT nome_produto FROM Itenspedido ORDER BY nome_produto ASC;
+-- Ex 6:
+SELECT * FROM Itenspedido WHERE preco_unitario > 100.00;
+-- Ex 7:
+SELECT * FROM Itenspedido LIMIT 5;
+-- Ex 8:
+SELECT * FROM Itenspedido WHERE preco_unitario BETWEEN 50.00 AND 200.00;
+-- Ex 9:
+SELECT * FROM Clientes WHERE nome LIKE 'A%';
+-- Ex 10:
+SELECT * FROM Itenspedido WHERE nome_produto LIKE '%Gamer%';
+
+
+-- ============================================================================
+-- 3. SISTEMA DE BIBLIOTECA
+-- ============================================================================
+
+CREATE DATABASE Sistema_de_Biblioteca;
+USE Sistema_de_Biblioteca;
+
+CREATE TABLE Autores(
+    id_autor INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100)
+);
+
+CREATE TABLE Livros(
+    id_livros INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR (100),
+    ano_publicacao DATE,
+    id_autor INT,
+    FOREIGN KEY (id_autor) REFERENCES Autores(id_autor)
+);
+
+CREATE TABLE Emprestimos(
+    id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
+    id_livros INT,
+    nome_usuario VARCHAR (100),
+    data_emprestimo DATE,
+    data_devolucao DATE,
+    FOREIGN KEY (id_livros) REFERENCES Livros(id_livros)
+);
+
+INSERT INTO Autores (nome) VALUES
+('Antoninho foguete'),
+('Clarice Lispector'),
+('George Orwell'),
+('J.K. Rowling'),
+('Gabriel García Márquez'),
+('J.R.R. Tolkien'),
+('Agatha Christie'),
+('José Saramago'),
+('Stephen King'),
+('Virginia Woolf'),
+('Machado de Assis');
+
+INSERT INTO Livros (titulo, ano_publicacao, id_autor) VALUES
+('viagem a lua em 2 hours', '1599-01-21', 1),
+('A Hora da Estrela', '1977-01-01', 2),
+('1984', '1949-01-01', 3),
+('Harry Potter e a Pedra Filosofal', '1997-01-01', 4),
+('Cem Anos de Solidão', '1967-01-01', 5),
+('O Senhor dos Anéis', '1954-01-01', 6),
+('E Não Sobrou Nenhum', '1939-01-01', 7),
+('Ensaio sobre a Cegueira', '1995-01-01', 8),
+('O Iluminado', '1977-01-01', 9),
+('O Faroeste', '1925-01-01', 10),
+('Dom Cassmurro', '1899-02-01', 11);
+
+INSERT INTO Emprestimos (id_livros, nome_usuario, data_emprestimo, data_devolucao) VALUES
+(1, 'Lucas Silva', '2026-03-01', '2026-03-15'),
+(2, 'Mariana Santos', '2026-03-02', '2026-03-16'),
+(3, 'Carlos Eduardo', '2026-03-03', '2026-03-17'),
+(4, 'Beatriz Costa', '2026-03-04', '2026-03-18'),
+(5, 'Gabriel Oliveira', '2026-03-05', '2026-03-19'),
+(6, 'Fernanda Lima', '2026-03-06', '2026-03-20'),
+(7, 'Rafael Souza', '2026-03-07', '2026-03-21'),
+(8, 'Camila Rodrigues', '2026-03-08', '2026-03-22'),
+(9, 'Thiago Pereira', '2026-03-09', '2026-03-23'),
+(10, 'Juliana Alves', '2026-03-10', '2026-03-24'),
+(11, 'Lucas augusto', '2026-02-01', '2026-02-15');
+
+UPDATE Livros SET ano_publicacao='1800-01-03' WHERE id_livros=5;
+UPDATE Emprestimos SET data_devolucao='2026-04-20' WHERE id_emprestimo=9;
+UPDATE Autores SET nome='vitinho da silva' WHERE id_autor=9;
+
+DELETE FROM Emprestimos WHERE id_emprestimo=10;
+DELETE FROM Livros WHERE id_livros=10;
+
+ALTER TABLE Livros ADD editora VARCHAR(100);
+ALTER TABLE Autores ADD nacionalidade VARCHAR(60);
+
+-- RESOLUÇÃO DOS EXERCÍCIOS: SISTEMA DE BIBLIOTECA
+-- Ex 1:
+SELECT * FROM Autores;
+-- Ex 2:
+SELECT nome FROM Autores;
+-- Ex 3:
+SELECT * FROM Livros;
+-- Ex 4:
+SELECT * FROM Livros WHERE ano_publicacao > '2015-12-31';
+-- Ex 5:
+SELECT * FROM Emprestimos;
+-- Ex 6:
+SELECT * FROM Emprestimos ORDER BY data_emprestimo ASC;
+-- Ex 7:
+SELECT * FROM Livros ORDER BY titulo ASC;
+-- Ex 8:
+SELECT * FROM Livros LIMIT 5;
+-- Ex 9:
+SELECT * FROM Livros WHERE ano_publicacao BETWEEN '2000-01-01' AND '2020-12-31';
+-- Ex 10:
+SELECT * FROM Autores WHERE nome LIKE 'P%';
